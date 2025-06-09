@@ -1,0 +1,14 @@
+# Xcode
+DerivedData/
+*.xcworkspace
+*.xcuserdata
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# SwiftPM
+.build/
+
+# macOS
+.DS_Store
