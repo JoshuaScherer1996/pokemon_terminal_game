@@ -1,5 +1,7 @@
 // File for main game Logic
 
 func startGame() {
-    print("Getting back into things!")
+    // Test calls for basic messages as of right now
+    welcomeMessage()
+    gameOverMessage()
 }
