@@ -1,6 +1,6 @@
 // MARK: Different Pokemon Types
 
-// Enum lists all the different possible types with a raw value of type string
+// Enum lists all the different possible types with a raw value of type string.
 enum PokeType: String {
     case normal
     case fire

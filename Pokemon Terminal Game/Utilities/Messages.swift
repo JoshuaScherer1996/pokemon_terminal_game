@@ -21,7 +21,7 @@ func welcomeMessage() {
         """)
 }
 
-// Function
+// Function that displays the game over message for the game.
 func gameOverMessage() {
     print("""
         
@@ -44,6 +44,7 @@ func gameOverMessage() {
     printCharmander()
 }
 
+// Function that displays Charmander ASCII art.
 func printCharmander() {
     print("""
                          .-.,__
