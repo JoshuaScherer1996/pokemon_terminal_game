@@ -1,4 +1,4 @@
-// MARK: Extension Capture
+// MARK: Extension Capture for Pokemon
 
 // Extension implements the capture protocol for the Pokemon struct.
 extension Pokemon: Capture {

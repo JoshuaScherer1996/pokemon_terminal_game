@@ -7,9 +7,9 @@ struct Pokemon {
     let type: [PokeType]
     
     let maxHP: Int
-    var currentHp: Int
+    var currentHP: Int
+    
+    let attack: Int
     
     let catchDifficulty: Int
-    
-    // Later on: Implementation of functions through protocols
 }
