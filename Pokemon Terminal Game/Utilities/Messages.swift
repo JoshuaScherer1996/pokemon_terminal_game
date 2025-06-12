@@ -1,3 +1,5 @@
+//MARK: Collection of messages
+
 // Function that welcomes the player into the game.
 func welcomeMessage() {
     print("""

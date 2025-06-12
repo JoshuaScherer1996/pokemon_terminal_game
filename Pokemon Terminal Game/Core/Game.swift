@@ -1,4 +1,4 @@
-// File for main game Logic
+// MARK: Main game logic
 
 func startGame() {
     // Test calls for basic messages as of right now
