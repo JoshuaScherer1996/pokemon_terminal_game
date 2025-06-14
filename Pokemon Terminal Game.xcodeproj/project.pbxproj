@@ -23,9 +23,32 @@
 		27DA390C2DFDB50600BBA99B /* PokemonTerminalGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonTerminalGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		27F2AE352DFDCC830007F985 /* Exceptions for "Pokemon Terminal Game" folder in "PokemonTerminalGameTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Core/Game.swift,
+				main.swift,
+				Pokemon/PokeFactory.swift,
+				Pokemon/Pokemon.swift,
+				Pokemon/PokemonRawData.swift,
+				Pokemon/PokeType.swift,
+				"Utilities/Extensions/Pokemon+Battle.swift",
+				"Utilities/Extensions/Pokemon+Capture.swift",
+				Utilities/Messages.swift,
+				Utilities/Protocols/Battle.swift,
+				Utilities/Protocols/Capture.swift,
+			);
+			target = 27DA390B2DFDB50600BBA99B /* PokemonTerminalGameTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		279AEE852DF7517A002E3BE3 /* Pokemon Terminal Game */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				27F2AE352DFDCC830007F985 /* Exceptions for "Pokemon Terminal Game" folder in "PokemonTerminalGameTests" target */,
+			);
 			path = "Pokemon Terminal Game";
 			sourceTree = "<group>";
 		};
