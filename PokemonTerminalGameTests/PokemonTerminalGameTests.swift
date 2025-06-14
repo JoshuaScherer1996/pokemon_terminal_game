@@ -45,8 +45,25 @@ final class PokemonTerminalGameTests: XCTestCase {
         
     }
 
+    /// Tests that the catch chance is correctly calculated for a mid-range difficulty.
     func testCatchChanceReturnsMidRangeCorrectly() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with a mid-range catch difficulty.
+        let midRangePokemon = Pokemon(
+            id: "888",
+            name: "PokeBalanced",
+            type: [.normal],
+            maxHP: 100,
+            attack: 50,
+            catchDifficulty: 127 // midpoint of 0–255
+        )
+
+        // Act: Calculate the catch chance.
+        let chance = midRangePokemon.catchChance()
+
+        // Assert: Catch chance should be approximately 0.5 (1.0 - 127/255).
+        let expectedChance = 1.0 - Double(127) / 255.0
+        XCTAssertEqual(chance, expectedChance, accuracy: 0.0001, "Catch chance should match expected mid-range calculation.")
     }
 
     func testCatchChanceNeverBelowMinimum() {
