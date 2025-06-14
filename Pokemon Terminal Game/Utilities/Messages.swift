@@ -1,6 +1,6 @@
 //MARK: Collection of messages
 
-// Function that welcomes the player into the game.
+/// Displays the welcome message to the player.
 func welcomeMessage() {
     print("""
         ***********************************************
@@ -18,10 +18,11 @@ func welcomeMessage() {
         Each Pokémon has varying levels of difficulty to catch. Be prepared to prove your skills as a Pokémon Trainer and become the very best!
         
         Have fun and good luck on your journey!
+        
         """)
 }
 
-// Function that displays the game over message for the game.
+/// Displays the game over message when the player finishes the game.
 func gameOverMessage() {
     print("""
         
@@ -44,7 +45,7 @@ func gameOverMessage() {
     printCharmander()
 }
 
-// Function that displays Charmander ASCII art.
+/// Prints a Charmander ASCII art.
 func printCharmander() {
     print("""
                          .-.,__

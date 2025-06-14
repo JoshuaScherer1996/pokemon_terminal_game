@@ -1,6 +1,6 @@
-// MARK: Pokemon data model
+// MARK: Pokemon Data Model
 
-// Model for the Pokemon objects with all necessary properties.
+/// Model representing a single Pokemon with all its core properties.
 struct Pokemon {
     let id: String
     let name: String
@@ -13,12 +13,13 @@ struct Pokemon {
     
     let catchDifficulty: Int
     
+    /// Custom initializer to set the hp based properties correctly.
     init(id: String, name: String, type: [PokeType], maxHP: Int, attack: Int, catchDifficulty: Int) {
         self.id = id
         self.name = name
         self.type = type
         self.maxHP = maxHP
-        self.currentHP = maxHP
+        self.currentHP = maxHP // sets the currentHP to the maxHP in the init.
         self.attack = attack
         self.catchDifficulty = catchDifficulty
     }

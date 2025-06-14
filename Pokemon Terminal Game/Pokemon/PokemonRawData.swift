@@ -1,6 +1,6 @@
-// MARK: Raw Data for the Pokemons
+// MARK: Raw Pokemon Data Arrays
 
-// Information about the pokedex numbers directly as string values.
+/// String values representing the Pokedex numbers.
 let pokemonNumbers: [String] = [
     "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
     "011", "012", "013", "014", "015", "016", "017", "018", "019", "020",
@@ -20,7 +20,7 @@ let pokemonNumbers: [String] = [
     "151"
 ]
 
-// Information about the pokemon names directly as string values.
+/// English Pokemon names as strings.
 let pokemonNames: [String] = [
     "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle",
     "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto",
@@ -41,7 +41,7 @@ let pokemonNames: [String] = [
     "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"
 ]
 
-// Information about the pokemon types directly as string values.
+/// Type definitions in the format "fire/flying" or just "electric".
 let pokemonTypes: [String] = [
     "grass/poison", "grass/poison", "grass/poison", "fire", "fire", "fire/flying", "water", "water",
     "water", "bug", "bug", "bug/flying", "bug/poison", "bug/poison", "bug/poison", "normal/flying",

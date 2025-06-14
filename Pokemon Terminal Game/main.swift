@@ -1,6 +1,4 @@
-import Foundation
-// MARK: Startpoint application
+// MARK: Application Entry Point
 
-
-// Starting point of the Application. Calls the startGame function where everything begins.
+/// Entry point that starts the game logic.
 startGame()

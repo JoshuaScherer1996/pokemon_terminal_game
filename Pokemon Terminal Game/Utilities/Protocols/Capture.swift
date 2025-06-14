@@ -1,8 +1,9 @@
 // MARK: Capture Protocol
 
-// Protocol ensures that the necessary properties and methods will be implemented for our objects.
+/// Protocol defining capture-related behavior for Pokemon.
 protocol Capture {
     var catchDifficulty: Int { get }
     
+    /// Calculates the chance to successfully catch a Pokemon.
     func catchChance() -> Double
 }

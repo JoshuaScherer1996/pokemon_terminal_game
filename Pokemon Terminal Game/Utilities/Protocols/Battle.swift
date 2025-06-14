@@ -1,6 +1,6 @@
 // MARK: Protocol Battle
 
-// Protocol ensures that the necessary properties and methods will be implemented for our objects.
+/// Protocol defining the battle-related properties and behaviors for Pokemon.
 protocol Battle {
     var maxHP: Int { get }
     var currentHP: Int { get set}
