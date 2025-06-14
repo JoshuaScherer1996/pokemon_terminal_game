@@ -213,8 +213,13 @@ final class PokemonTerminalGameTests: XCTestCase {
     
     // MARK: - Factory Creation
     
+    /// Tests that the `PokeFactory` creates exactly 151 Pokemon as expected for Generation 1.
     func testFactoryCreatesAllPokemon() {
-        // TODO: Implement the test case
+        // Act: Generate all Pokemon from the factory
+        let allPokemon = PokeFactory.allPokemon()
+
+        // Assert: The number of created Pokemon should be 151
+        XCTAssertEqual(allPokemon.count, 151, "Expected 151 Pokémon, but got \(allPokemon.count).")
     }
 
     func testFactorySkipsInvalidTypesGracefully() {
