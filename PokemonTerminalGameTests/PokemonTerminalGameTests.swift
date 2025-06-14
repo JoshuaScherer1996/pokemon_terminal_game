@@ -66,34 +66,148 @@ final class PokemonTerminalGameTests: XCTestCase {
         XCTAssertEqual(chance, expectedChance, accuracy: 0.0001, "Catch chance should match expected mid-range calculation.")
     }
 
+    /// Tests that the catch chance never drops below the defined minimum of 0.05,
+    /// even if the catch difficulty exceeds the expected maximum.
     func testCatchChanceNeverBelowMinimum() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with an invalidly high catch difficulty.
+        let brokenPokemon = Pokemon(
+            id: "787",
+            name: "PokeImpossible",
+            type: [.ghost],
+            maxHP: 100,
+            attack: 50,
+            catchDifficulty: 999 // way above the 255 cap
+        )
+
+        // Act: Calculate the catch chance.
+        let chance = brokenPokemon.catchChance()
+
+        // Assert: The result should never fall below the minimum threshold (0.05).
+        XCTAssertEqual(chance, 0.05, accuracy: 0.0001, "Catch chance must never drop below 0.05 even for absurd difficulties.")
     }
 
+    /// Tests that the catch chance never exceeds the defined maximum of 1.0,
+    /// even if the catch difficulty drops below the expected minimum.
     func testCatchChanceNeverAboveMaximum() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with an invalidly low catch difficulty.
+        let invalidPokemon = Pokemon(
+            id: "020",
+            name: "PokeInvalid",
+            type: [.grass],
+            maxHP: 100,
+            attack: 50,
+            catchDifficulty: -999 // way below the 0 cap
+        )
+        
+        // Act: Calculate the catch chance.
+        let chance = invalidPokemon.catchChance()
+        
+        // Assert: The result should never exceed the maximum threshold (1.0).
+        XCTAssertEqual(chance, 1.0, accuracy: 0.0001, "Catch chance must never exceed 1.0 even for absurd difficulties.")
     }
     
     // MARK: - Battle Logic
     
+    /// Tests that the `takeDamage` method correctly reduces the Pokemon's current HP.
     func testTakeDamageReducesCurrentHP() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with known initial HP.
+        var testPokemon = Pokemon(
+            id: "741",
+            name: "PokeDummy",
+            type: [.normal],
+            maxHP: 100,
+            attack: 30,
+            catchDifficulty: 100
+        )
+
+        // Act: Inflict 40 damage.
+        testPokemon.takeDamage(40)
+
+        // Assert: Current HP should be reduced by 40.
+        XCTAssertEqual(testPokemon.currentHP, 60, "Current HP should be 60 after taking 40 damage from 100.")
     }
 
+    /// Tests that the `takeDamage` method correctly reduces the Pokemon's current HP to zero.
     func testTakeDamageReducesHPToZero() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with known initial HP.
+        var testPokemon = Pokemon(
+            id: "489",
+            name: "PokeDummy",
+            type: [.normal],
+            maxHP: 100,
+            attack: 30,
+            catchDifficulty: 100
+        )
+        
+        // Act: Inflict 100 damage.
+        testPokemon.takeDamage(100)
+        
+        // Assert: Current HP should be reduced to 0.
+        XCTAssertEqual(testPokemon.currentHP, 0, "Current HP should be 0 after taking 100 damage from 100.")
     }
 
-    func testTakeDamageCannotGoBelowZero() {
-        // TODO: Implement the test case
-    }
-
+    /// Tests that the `isFainted` property returns `true` when `currentHP` is 0.
     func testIsFaintedReturnsTrueWhenHPIsZero() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with known initial HP.
+        let faintedPokemon = Pokemon(
+            id: "686",
+            name: "Faintmon",
+            type: [.ghost],
+            maxHP: 50,
+            attack: 20,
+            catchDifficulty: 100
+        )
+
+        // Override currentHP to simulate fainted state
+        var testPokemon = faintedPokemon
+        testPokemon.takeDamage(50) // Simulate losing all HP
+
+        // Assert: Check if `isFainted` returns true
+        XCTAssertTrue(testPokemon.isFainted, "Expected `isFainted` to return true when HP is 0.")
+    }
+    
+    /// Tests that the `isFainted` property returns `true` when `currentHP` is below 0.
+    func testIsFaintedReturnsTrueWhenHPIsBelowZero() {
+        // Arrange: Create a Pokemon with known initial HP.
+        let faintedPokemon = Pokemon(
+            id: "968",
+            name: "Super Faintmon",
+            type: [.bug],
+            maxHP: 50,
+            attack: 20,
+            catchDifficulty: 100
+        )
+
+        // Override currentHP to simulate fainted state
+        var testPokemon = faintedPokemon
+        testPokemon.takeDamage(100) // Simulate losing all HP and more
+
+        // Assert: Check if `isFainted` returns true
+        XCTAssertTrue(testPokemon.isFainted, "Expected `isFainted` to return true when HP is below 0.")
     }
 
+    /// Tests that the `isFainted` property returns `false` when `currentHP` is above 0.
     func testIsFaintedReturnsFalseWhenHPAboveZero() {
-        // TODO: Implement the test case
+        // Arrange: Create a Pokemon with full HP.
+        var healthyPokemon = Pokemon(
+            id: "347",
+            name: "Toughmon",
+            type: [.rock],
+            maxHP: 60,
+            attack: 25,
+            catchDifficulty: 80
+        )
+
+        // Act: Inflict partial damage
+        healthyPokemon.takeDamage(30)
+
+        // Assert: The Pokémon should not be fainted
+        XCTAssertFalse(healthyPokemon.isFainted, "Expected `isFainted` to return false when HP > 0.")
     }
 
     
