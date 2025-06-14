@@ -5,8 +5,10 @@ final class PokemonTerminalGameTests: XCTestCase {
     
     // MARK: - Capture Logic
     
+    /// Tests that the catch chance returns the minimum (0.05) when difficulty is at its maximum.
     func testCatchChanceReturnsMinimumWhenDifficultyIsHigh() {
 
+        // Arrange: Create a Pokemon with the maximum catch difficulty.
         let hardToCatchPokemon = Pokemon(
                 id: "999",
                 name: "PokeLegend",
@@ -16,13 +18,31 @@ final class PokemonTerminalGameTests: XCTestCase {
                 catchDifficulty: 255 // max value, should give minimum chance
             )
         
+        // Act: Calculate the catch chance.
         let chance = hardToCatchPokemon.catchChance()
         
+        // Assert: Catch chance should be at minimum (0.05).
         XCTAssertEqual(chance, 0.05, accuracy: 0.0001, "Catch chance should be at minimum (0.05) for max difficulty.")
     }
 
+    /// Tests that the catch chance returns the maximum (1.0) when difficulty is at its minimum.
     func testCatchChanceReturnsMaximumWhenDifficultyIsLow() {
-        // TODO: Implement the test case
+        
+        // Arrange: Create a Pokemon with the minimum catch difficulty.
+        let easyToCatchPokemon = Pokemon(
+            id: "000",
+            name: "PokeStarter",
+            type: [.electric],
+            maxHP: 10,
+            attack: 15,
+            catchDifficulty: 0) // min value, should give maximum chance
+        
+        // Act: Calculate the catch chance.
+        let chanc = easyToCatchPokemon.catchChance()
+        
+        // Assert: Catch chance should be at maximum (1.0).
+        XCTAssertEqual(chanc, 1.0, accuracy: 0.0001, "Catch chance should be at maximum (1.0) for min difficulty.")
+        
     }
 
     func testCatchChanceReturnsMidRangeCorrectly() {
