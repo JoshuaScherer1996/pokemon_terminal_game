@@ -19,9 +19,9 @@ struct PokeFactory {
                 id: pokemonNumbers[index],
                 name: pokemonNames[index],
                 type: type,
-                maxHP: 20,
-                attack: 10,
-                catchDifficulty: 2
+                maxHP: pokemonHP[index],
+                attack: pokemonAttack[index],
+                catchDifficulty: pokemonCatchDifficulty[index]
             )
             
             pokedex.append(pokemon)
