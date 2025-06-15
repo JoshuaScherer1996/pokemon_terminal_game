@@ -4,6 +4,7 @@ import XCTest
 @testable import Pokemon_Terminal_Game
 
 final class CaptureTests: XCTestCase {
+    
     /// Tests that the catch chance returns the minimum (0.05) when difficulty is at its maximum.
     func testCatchChanceReturnsMinimumWhenDifficultyIsHigh() {
 

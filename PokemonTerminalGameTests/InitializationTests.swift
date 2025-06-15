@@ -4,6 +4,7 @@ import XCTest
 @testable import Pokemon_Terminal_Game
 
 final class InitializationTests: XCTestCase {
+    
     /// Tests that a newly created `Pokemon` instance sets `currentHP` equal to `maxHP` by default.
     func testCurrentHPIsInitializedAsMaxHP() {
         

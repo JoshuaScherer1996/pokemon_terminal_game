@@ -4,6 +4,7 @@ import XCTest
 @testable import Pokemon_Terminal_Game
 
 final class ParserTests: XCTestCase {
+    
     /// Tests that a single-type string (e.g. "fire") is parsed correctly into one `PokeType`.
     func testSingleTypeIsParsedCorrectly() {
         

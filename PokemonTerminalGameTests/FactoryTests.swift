@@ -4,6 +4,7 @@ import XCTest
 @testable import Pokemon_Terminal_Game
 
 final class PokeFactoryTests: XCTestCase {
+    
     /// Tests that the `PokeFactory` creates exactly 151 Pokemon as expected for Generation 1.
     func testFactoryCreatesAllPokemon() {
         

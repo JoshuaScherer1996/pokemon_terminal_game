@@ -4,6 +4,7 @@ import XCTest
 @testable import Pokemon_Terminal_Game
 
 final class BattBattleTests: XCTestCase {
+    
     /// Tests that the `takeDamage` method correctly reduces the Pokemon's current HP.
     func testTakeDamageReducesCurrentHP() {
         
