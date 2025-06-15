@@ -36,13 +36,13 @@ The code aims to show how even a text-based game can be broken down into small, 
 ## Project Flow (Screenshots)
 
 ### 1. Main Menu & Game Start
-![Start Menu Flowchart](/mnt/data/Screenshot%202025-06-09%20at%2019.08.02.png)
+![Start Menu Flowchart](Assets/Screenshot_1.png)
 
 ### 2. Ingame Menu & Actions
-![Ingame Flowchart](/mnt/data/Screenshot%202025-06-09%20at%2019.08.39.png)
+![Ingame Flowchart](Assets/Screenshot_2.png)
 
 ### 3. Encounter & Battle Logic
-![Battle Flowchart](/mnt/data/Screenshot%202025-06-09%20at%2019.08.54.png)
+![Battle Flowchart](Assets/Screenshot_3.png)
 
 ---
 
