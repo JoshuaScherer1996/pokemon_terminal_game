@@ -17,4 +17,5 @@ enum PokeType: String {
     case rock
     case ghost
     case dragon
+    case fairy
 }

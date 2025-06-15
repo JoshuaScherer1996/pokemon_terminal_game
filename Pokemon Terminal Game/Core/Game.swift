@@ -5,8 +5,32 @@ func startGame() {
     welcomeMessage()
     //gameOverMessage()
     
-    let pokemons: [Pokemon] = PokeFactory.allPokemon()
+    
+    print()
+    print()
+    print()
+    print()
+    
+    
+  
+    let pokemons = PokeFactory.allPokemon()
     for pokemon in pokemons {
-        print(pokemon.id)
+        let id = pokemon.id
+        let name = pokemon.name
+        let type = pokemon.type.map { $0.rawValue }.joined(separator: "/")
+        let maxHP = pokemon.maxHP
+        let attack = pokemon.attack
+        let catchDifficulty = pokemon.catchDifficulty
+        print("\(id): \(name), \(type), \(maxHP), \(attack), \(catchDifficulty)")
     }
+    
+    
+    
+    
+    
+    
+    print()
+    print()
+    print()
+    print()
 }
