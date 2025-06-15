@@ -1,7 +1,7 @@
 // MARK: Pokemon Data Model
 
 /// Model representing a single Pokemon with all its core properties.
-struct Pokemon {
+struct Pokemon: Equatable {
     let id: String
     let name: String
     let type: [PokeType]
