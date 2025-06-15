@@ -36,6 +36,7 @@
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
 				Utilities/Messages.swift,
+				Utilities/PokeParser.swift,
 				Utilities/Protocols/Battle.swift,
 				Utilities/Protocols/Capture.swift,
 			);

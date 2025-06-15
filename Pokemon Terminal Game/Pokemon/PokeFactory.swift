@@ -24,7 +24,7 @@ struct PokeFactory {
         var pokedex: [Pokemon] = []
         
         for index in 0..<names.count {
-            guard let type = parseTypes(from: types[index]) else {
+            guard let type = PokeParser.parseTypes(from: types[index]) else {
                 continue
             }
             
@@ -41,17 +41,5 @@ struct PokeFactory {
         }
         
         return pokedex
-    }
-    
-    /// Converts a type string like `"fire/flying"` into an array of `PokeType` enums.
-    ///
-    /// - Parameter string: A type string (e.g. `"grass/poison"`).
-    /// - Returns: An array of `PokeType`s, or `nil` if parsing fails.
-    private static func parseTypes(from string: String) -> [PokeType]? {
-        let elements = string
-            .split(separator: "/")
-            .compactMap { PokeType(rawValue: String($0)) }
-        
-        return elements.isEmpty ? nil : elements
     }
 }
