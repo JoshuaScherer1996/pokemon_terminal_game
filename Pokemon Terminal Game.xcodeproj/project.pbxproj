@@ -33,6 +33,7 @@
 				Pokemon/Pokemon.swift,
 				Pokemon/PokemonRawData.swift,
 				Pokemon/PokeType.swift,
+				Utilities/AsciiArt.swift,
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
 				Utilities/Messages.swift,

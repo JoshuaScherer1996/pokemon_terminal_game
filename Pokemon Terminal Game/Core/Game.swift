@@ -5,3 +5,20 @@ func startGame() {
     welcomeMessage()
     gameOverMessage()    
 }
+
+/// Displays the welcome message to the player.
+func welcomeMessage() {
+    print(Messages.welcome)
+}
+
+/// Displays the game over message when the player finishes the game.
+func gameOverMessage() {
+    print(Messages.gameOver)
+    
+    printCharmander()
+}
+
+/// Prints a Charmander ASCII art.
+func printCharmander() {
+    print(AsciiArt.charmanderBig)
+}
