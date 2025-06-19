@@ -29,10 +29,10 @@
 			membershipExceptions = (
 				Core/Game.swift,
 				main.swift,
+				Pokemon/Data/PokemonRawData.swift,
+				Pokemon/Model/Pokemon.swift,
+				Pokemon/Model/PokeType.swift,
 				Pokemon/PokeFactory.swift,
-				Pokemon/Pokemon.swift,
-				Pokemon/PokemonRawData.swift,
-				Pokemon/PokeType.swift,
 				Utilities/AsciiArt.swift,
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",

@@ -6,6 +6,7 @@ enum Messages {
     
     /// Message shown at the start of the game.
     static let welcome = """
+        
         ***********************************************
         **                                           **
         **   Welcome to the Pokémon Terminal Game!   **
@@ -23,6 +24,19 @@ enum Messages {
         Have fun and good luck on your journey!
         
         """
+    
+    /// Main menu options shown during the main menu state.
+    static let mainMenu = """
+       
+       ----------------------------------
+                   MAIN MENU
+       ----------------------------------
+       1. Start New Game
+       2. Continue
+       3. Credits
+       4. Exit
+       
+       """
     
     /// Message shown after completing the full Pokedex.
     static let fullDex = """
@@ -42,4 +56,13 @@ enum Messages {
         ***********************************************
         
         """
+    
+    /// Informartion to the player if they haven't saved a game yet.
+    static let noSave = "You currently have no save file."
+    
+    /// Prompts the player to choose an option based on the input.
+    static let inputPromptNumbers = "Please enter a number between 1 and 4."
+    
+    /// Prompts the player to continue.
+    static let inputPromptNext = "Please enter 'n' to continue..."
 }
