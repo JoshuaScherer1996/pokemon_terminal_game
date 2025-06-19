@@ -1,6 +1,10 @@
-//MARK: Collection of messages
+// MARK: Collection of messages
 
+/// A container for static text messages shown during the game.
+/// Provides centralized and cleanly separated message strings.
 enum Messages {
+    
+    /// Message shown at the start of the game.
     static let welcome = """
         ***********************************************
         **                                           **
@@ -20,7 +24,8 @@ enum Messages {
         
         """
     
-    static let gameOver = """
+    /// Message shown after completing the full Pokedex.
+    static let fullDex = """
         
         **********************************************
         

@@ -1,4 +1,10 @@
+// MARK: Collection of ASCII art
+
+/// A container for large ASCII representations used during the game.
+/// Intended for stylistic presentation and game flavor.
 enum AsciiArt {
+    
+    /// A large ASCII art of Charmander used for dramatic flair or battle scenes.
     static let charmanderBig: String = """
                          .-.,__
                          `.     `.  ,

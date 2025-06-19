@@ -13,7 +13,7 @@ func welcomeMessage() {
 
 /// Displays the game over message when the player finishes the game.
 func gameOverMessage() {
-    print(Messages.gameOver)
+    print(Messages.fullDex)
     
     printCharmander()
 }
