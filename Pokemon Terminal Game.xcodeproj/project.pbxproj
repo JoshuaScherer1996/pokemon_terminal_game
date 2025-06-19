@@ -28,6 +28,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Core/Game.swift,
+				Core/GameController.swift,
+				Core/GameState.swift,
 				main.swift,
 				Pokemon/Data/PokemonRawData.swift,
 				Pokemon/Model/Pokemon.swift,
