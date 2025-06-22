@@ -18,8 +18,6 @@ final class GameController {
                 handleMainMenu()
             case .newGame:
                 handleNewGame()
-                // just a quick exit from the run to test the flow. Gonna be removed later on.
-                isRunning = false
             case .continueGame:
                 // TODO: Implement my logic with a handler function
                 handleContinue()
@@ -139,7 +137,7 @@ final class GameController {
     
     /// Placeholder for credits screen.
     private func handleCredits() {
-        print("Not implemented yet. Exiting...")
+        print(Messages.credits)
     }
     
     /// Placeholder for saving game state and exiting.

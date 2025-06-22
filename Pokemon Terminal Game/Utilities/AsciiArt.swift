@@ -17,7 +17,7 @@ ______         _            _____                         _                _   _
 """#
     
     /// ASCII art of Charmander.
-    static let charmanderBig: String = """
+    static let Charizard: String = """
                          .-.,__
                          `.     `.  ,
                       .--'  .._,'"-' `.

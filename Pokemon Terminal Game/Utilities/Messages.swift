@@ -88,4 +88,35 @@ enum Messages {
         
         So... Who will it be?
         """
+    /// Information about the development.
+    static let credits = """
+        ***********************************************
+        **                 CREDITS                   **
+        ***********************************************
+    
+        Pokémon Terminal Edition – Portfolio Showcase
+
+        Developed by Joshua Scherer
+        Built entirely in Swift as a CLI game
+
+        Inspired by the original Pokémon games
+        by Nintendo, Game Freak, and Creatures Inc.
+
+        Special thanks to the creators of ASCII Pokémon art
+
+        And last but not least: thank you, the player.  
+        A game only comes to life through its players,  
+        and the fact that you chose to start this journey  
+        means the world to me.
+    
+        This is a fan-made project created for educational 
+        and portfolio purposes only.
+        All rights to Pokémon belong to their original creators.
+        No copyright infringement intended.
+
+        ***********************************************
+        **         Thanks for playing! ❤️            **
+        ***********************************************
+    """
+
 }

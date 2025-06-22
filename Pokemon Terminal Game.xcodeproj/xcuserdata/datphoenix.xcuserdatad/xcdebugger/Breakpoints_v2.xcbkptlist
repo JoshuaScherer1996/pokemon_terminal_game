@@ -3,4 +3,52 @@
    uuid = "D9600A7E-DA17-4609-B2BD-0245CB617D44"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3CBCE2E-D4F7-413E-8630-8D4223C31907"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokemon Terminal Game/Core/GameController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "handleNewGame()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3CBCE2E-D4F7-413E-8630-8D4223C31907 - b295dc6120118d1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemon_Terminal_Game.GameController.handleNewGame() -&gt; ()"
+                  moduleName = "Pokemon Terminal Game"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage%20Extension/Speicher%20Unterlagen%20etc/Codes%20private/iOS/PokeTerminal/Pokemon%20Terminal%20Game/Pokemon%20Terminal%20Game/Core/GameController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106">
+               </Location>
+               <Location
+                  uuid = "F3CBCE2E-D4F7-413E-8630-8D4223C31907 - adf7284f0af48a6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in Pokemon_Terminal_Game.GameController.handleNewGame() -&gt; ()"
+                  moduleName = "Pokemon Terminal Game"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage%20Extension/Speicher%20Unterlagen%20etc/Codes%20private/iOS/PokeTerminal/Pokemon%20Terminal%20Game/Pokemon%20Terminal%20Game/Core/GameController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

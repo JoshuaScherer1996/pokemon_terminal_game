@@ -15,12 +15,12 @@ func welcomeMessage() {
 func gameOverMessage() {
     print(Messages.fullDex)
     
-    printCharmander()
+    printCharizard()
 }
 
 /// Prints a Charmander ASCII art.
-func printCharmander() {
-    print(AsciiArt.charmanderBig)
+func printCharizard() {
+    print(AsciiArt.Charizard)
 }
 
 
