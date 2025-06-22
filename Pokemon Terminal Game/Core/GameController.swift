@@ -70,18 +70,18 @@ final class GameController {
         handleMainMenuMessage()
         InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
             switch choice {
-                    case "1":
-                        self?.currentState = .playMenu
-                    case "2":
-                        self?.currentState = .pokedex
-                    case "3":
-                        self?.currentState = .credits
-                    case "4":
-                        self?.currentState = .saveAndExit
-                    default:
-                        // Should never happen but implemented default case to adhere to clean code guidlines.
-                        print("Invalid option.")
-                    }
+                case "1":
+                    self?.currentState = .playMenu
+                case "2":
+                    self?.currentState = .pokedex
+                case "3":
+                    self?.currentState = .credits
+                case "4":
+                    self?.currentState = .saveAndExit
+                default:
+                    // Should never happen but implemented default case to adhere to clean code guidlines.
+                    print("Invalid option.")
+            }
         }
     }
     
