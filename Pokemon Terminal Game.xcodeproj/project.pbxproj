@@ -38,6 +38,7 @@
 				Utilities/AsciiArt.swift,
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
+				Utilities/InputHandler.swift,
 				Utilities/Messages.swift,
 				Utilities/PokeParser.swift,
 				Utilities/Protocols/Battle.swift,
