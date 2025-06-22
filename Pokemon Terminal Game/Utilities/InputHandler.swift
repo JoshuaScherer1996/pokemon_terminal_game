@@ -20,19 +20,6 @@ enum InputHandler {
         }
     }
 
-    /// Waits for integer input from the user and returns it.
-    ///
-    /// - Parameter message: Optional message to show before the input.
-    /// - Returns: Validated Int or nil.
-    static func getIntInput(message: String? = nil) -> Int? {
-        if let message = message { print(message) }
-        guard let input = readLine(), let number = Int(input) else {
-            print("Invalid number. Please try again.\n")
-            return nil
-        }
-        return number
-    }
-
     /// Waits for one of multiple valid options (e.g., "1", "2", "3", etc.).
     ///
     /// - Parameters:

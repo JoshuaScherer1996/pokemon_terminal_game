@@ -6,7 +6,7 @@ final class GameController {
     /// The current active game state.
     private var currentState: GameState = .welcome
     
-    /// Starts the game loop and handles the active state transitions.
+    /// Starts the game loop and handles the active state transitions with help of the handler functions.
     func run() {
         var isRunning = true
         
@@ -47,19 +47,45 @@ final class GameController {
     
     // MARK: - State Handler Functions
 
+    /// Displays the welcome ASCII splash and welcome message,
+    /// then waits for the user to continue.
     private func handleWelcome() {
         print(AsciiArt.titleSplash)
         print(Messages.welcome)
         handleWelcomeInput()
     }
     
+    /// Waits for the user to press "n" to proceed from the welcome screen.
+    /// Uses a trailing closure to safely modify `currentState`.
     private func handleWelcomeInput() {
         InputHandler.waitForInput("n", message: Messages.inputPromptNext) {
+            // Using [weak self] avoids a retain cycle in case this closure
+            // is unexpectedly retained beyond the lifecycle of the controller.
             [weak self] in
                 self?.currentState = .mainMenu
         }
     }
     
+    private func handleMainMenu() {
+        handleMainMenuMessage()
+        InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
+            switch choice {
+                    case "1":
+                        self?.currentState = .playMenu
+                    case "2":
+                        self?.currentState = .pokedex
+                    case "3":
+                        self?.currentState = .credits
+                    case "4":
+                        self?.currentState = .saveAndExit
+                    default:
+                        // Should never happen but implemented default case to adhere to clean code guidlines.
+                        print("Invalid option.")
+                    }
+        }
+    }
+    
+    /// Displays the main menu options.
     private func handleMainMenuMessage() {
         print(Messages.mainMenu)
     }
