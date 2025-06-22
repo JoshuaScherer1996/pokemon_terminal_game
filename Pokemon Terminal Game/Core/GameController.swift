@@ -59,12 +59,15 @@ final class GameController {
     
     // MARK: - State Handler Functions
 
+    
+    /// Shows splash screen and disclaimer, then waits for user to continue.
     private func handleWelcome() {
         print(AsciiArt.titleSplash)
         print(Messages.legalDisclaimer)
         handleWelcomeInput()
     }
     
+    /// Waits for "n" input to continue to main menu.
     private func handleWelcomeInput() {
         InputHandler.waitForInput("n", message: Messages.inputPromptNext) {
             // Using [weak self] avoids a retain cycle in case this closure
@@ -74,6 +77,7 @@ final class GameController {
         }
     }
     
+    /// Displays the main menu and routes to the selected state.
     private func handleMainMenu() {
         handleMainMenuMessage()
         InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
@@ -93,10 +97,12 @@ final class GameController {
         }
     }
     
+    /// Prints main menu options.
     private func handleMainMenuMessage() {
         print(Messages.mainMenu)
     }
     
+    /// Shows starter Pokemon and waits for selection.
     private func handleNewGame() {
         handleNewGameMessages()
         InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
@@ -116,6 +122,7 @@ final class GameController {
         }
     }
     
+    /// Prints intro message and starter Pokemon with ASCII art.
     private func handleNewGameMessages() {
         print(Messages.greetings)
         print(Messages.choosePokemon)
@@ -125,18 +132,19 @@ final class GameController {
         print(AsciiArt.pikachu)
     }
     
+    /// Placeholder for loading saved game.
     private func handleContinue() {
         print("Save functions currently not available. Exiting...")
     }
     
+    /// Placeholder for credits screen.
     private func handleCredits() {
         print("Not implemented yet. Exiting...")
     }
     
+    /// Placeholder for saving game state and exiting.
     private func handleSaveAndExit() {
         //TODO: Call save functions ones implemented
         print("Save functions currently not available. Exiting...")
     }
 }
-
-// TODO: Take more time to rework the game state flow and handler funcs

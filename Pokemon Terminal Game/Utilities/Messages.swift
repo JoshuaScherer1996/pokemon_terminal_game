@@ -65,6 +65,7 @@ enum Messages {
     /// Prompts the player to continue.
     static let inputPromptNext = "Please enter 'n' to continue..."
     
+    /// Legal disclaimer to display transparently who owns what.
     static let legalDisclaimer = """
         ------------------------------------------------------------------------------------------
         © Legal Disclaimer
@@ -77,6 +78,7 @@ enum Messages {
         ------------------------------------------------------------------------------------------
         """
     
+    /// Prompts the player to choose a Pokemon.
     static let choosePokemon = """
         Oh! I almost forgot! You should never start your journey without a Pokémon by your side.
         

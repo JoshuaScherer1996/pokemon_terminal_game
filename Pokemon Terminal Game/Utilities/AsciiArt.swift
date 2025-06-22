@@ -16,7 +16,7 @@ ______         _            _____                         _                _   _
 
 """#
     
-    /// A large ASCII art of Charmander used for dramatic flair or battle scenes.
+    /// ASCII art of Charmander.
     static let charmanderBig: String = """
                          .-.,__
                          `.     `.  ,
@@ -60,6 +60,7 @@ ______         _            _____                         _                _   _
         
         """
     
+    /// ASCII art of Bulbasaur.
     static let bulbasaur: String = #"""
          ___  __   ___       ______         _  _                                     
         |  _|/  | |_  |      | ___ \       | || |                                    
@@ -91,6 +92,7 @@ ______         _            _____                         _                _   _
         ⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠉⠀⠀⠀⠀⠀⠀⠘⠛⠿⣿⠷⡾⠗⠊⠁⠀⠀⠀⠈⠉⠙⠛⠛⠛⠉⠀⠀⠀⠀⠀
         """#
     
+    /// ASCII art of Charmander.
     static let charmander: String = #"""
          ___  _____  ___        _____  _                                                _             
         |  _|/ __  \|_  |      /  __ \| |                                              | |
@@ -126,6 +128,7 @@ ______         _            _____                         _                _   _
         ⠀⠀⠀⠀⢀⡠⠖⢉⠀⠀⠀⠀⠀⠀⠀⠀⠀⣈⠇⠀⠀⠀⠀⠈⠉⠉⠑⠒⠒⠒⠊⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         """#
     
+    /// ASCII art of Squirtle.
     static let squirtle: String = #"""
          ___  _____  ___        _____                _        _    _       
         |  _||____ ||_  |      /  ___|              (_)      | |  | |      
@@ -162,6 +165,7 @@ ______         _            _____                         _                _   _
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀
         """#
     
+    /// ASCII art of Pikachu.
     static let pikachu: String = #"""
          ___    ___  ___       ______  _  _                  _            
         |  _|  /   ||_  |      | ___ \(_)| |                | |           
