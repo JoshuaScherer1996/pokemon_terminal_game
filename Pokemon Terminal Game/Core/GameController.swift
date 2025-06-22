@@ -38,7 +38,9 @@ final class GameController {
                 print()
             case .saveAndExit:
                 // TODO: Implement my logic with a handler function
-                print()
+                handleSaveAndExit()
+                // just a quick exit from the run to test the flow. Gonna be removed later on.
+                isRunning = false
             case .exit:
                 isRunning = false
             }
@@ -89,6 +91,23 @@ final class GameController {
     /// Displays the main menu options.
     private func handleMainMenuMessage() {
         print(Messages.mainMenu)
+    }
+    
+    private func handlePlayMenu() {
+        
+    }
+    
+    private func handlePokedex() {
+        
+    }
+    
+    private func handleCredits() {
+        
+    }
+    
+    private func handleSaveAndExit() {
+        //TODO: Call save functions ones implemented
+        print("Save function currently not available. Exiting...")
     }
 }
 
