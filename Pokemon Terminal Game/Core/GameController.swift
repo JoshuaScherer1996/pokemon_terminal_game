@@ -15,14 +15,16 @@ final class GameController {
             case .welcome:
                 handleWelcome()
             case .mainMenu:
-                handleMainMenuMessage()
-                // just a quick exit from the run to test the flow. Gonna be removed later on.
-                isRunning = false
+                handleMainMenu()
             case .newGame:
                 newGame()
+                // just a quick exit from the run to test the flow. Gonna be removed later on.
+                isRunning = false
             case .continueGame:
                 // TODO: Implement my logic with a handler function
-                print()
+                handleContinue()
+                // just a quick exit from the run to test the flow. Gonna be removed later on.
+                isRunning = false
             case .playMenu:
                 // TODO: Implement my logic with a handler function
                 print()
@@ -37,7 +39,9 @@ final class GameController {
                 print()
             case .credits:
                 // TODO: Implement my logic with a handler function
-                print()
+                handleCredits()
+                // just a quick exit from the run to test the flow. Gonna be removed later on.
+                isRunning = false
             case .gameOver:
                 // TODO: Implement my logic with a handler function
                 print()
