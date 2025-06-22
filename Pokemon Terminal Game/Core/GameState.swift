@@ -4,6 +4,8 @@
 enum GameState {
     case welcome
     case mainMenu
+    case newGame
+    case continueGame
     case playMenu
     case pokedex
     case encounter

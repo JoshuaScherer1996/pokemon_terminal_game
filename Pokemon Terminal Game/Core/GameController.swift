@@ -18,6 +18,11 @@ final class GameController {
                 handleMainMenuMessage()
                 // just a quick exit from the run to test the flow. Gonna be removed later on.
                 isRunning = false
+            case .newGame:
+                newGame()
+            case .continueGame:
+                // TODO: Implement my logic with a handler function
+                print()
             case .playMenu:
                 // TODO: Implement my logic with a handler function
                 print()
@@ -73,9 +78,9 @@ final class GameController {
         InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
             switch choice {
                 case "1":
-                    self?.currentState = .playMenu
+                    self?.currentState = .newGame
                 case "2":
-                    self?.currentState = .pokedex
+                    self?.currentState = .continueGame
                 case "3":
                     self?.currentState = .credits
                 case "4":
@@ -92,21 +97,30 @@ final class GameController {
         print(Messages.mainMenu)
     }
     
-    private func handlePlayMenu() {
-        print(Messages.greetings)
+    private func newGame() {
+        handleNewGameMessages()
     }
     
-    private func handlePokedex() {
-        
+    private func handleNewGameMessages() {
+        print(Messages.greetings)
+        print(Messages.choosePokemon)
+        print(AsciiArt.bulbasaur)
+        print(AsciiArt.charmander)
+        print(AsciiArt.squirtle)
+        print(AsciiArt.pikachu)
+    }
+    
+    private func handleContinue() {
+        print("Save functions currently not available. Exiting...")
     }
     
     private func handleCredits() {
-        
+        print("Not implemented yet. Exiting...")
     }
     
     private func handleSaveAndExit() {
         //TODO: Call save functions ones implemented
-        print("Save function currently not available. Exiting...")
+        print("Save functions currently not available. Exiting...")
     }
 }
 
