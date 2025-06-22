@@ -54,7 +54,6 @@ final class GameController {
     private func handleWelcome() {
         print(AsciiArt.titleSplash)
         print(Messages.legalDisclaimer)
-        print(Messages.welcome)
         handleWelcomeInput()
     }
     
@@ -94,7 +93,7 @@ final class GameController {
     }
     
     private func handlePlayMenu() {
-        
+        print(Messages.greetings)
     }
     
     private func handlePokedex() {

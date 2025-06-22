@@ -8,7 +8,7 @@ func startGame() {
 
 /// Displays the welcome message to the player.
 func welcomeMessage() {
-    print(Messages.welcome)
+    print(Messages.greetings)
 }
 
 /// Displays the game over message when the player finishes the game.

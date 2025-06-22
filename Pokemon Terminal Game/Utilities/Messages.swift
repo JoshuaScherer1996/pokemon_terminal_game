@@ -5,7 +5,7 @@
 enum Messages {
     
     /// Message shown at the start of the game.
-    static let welcome = """
+    static let greetings = """
         
         ***********************************************
         **                                           **
@@ -27,7 +27,6 @@ enum Messages {
     
     /// Main menu options shown during the main menu state.
     static let mainMenu = """
-       
        ----------------------------------
                    MAIN MENU
        ----------------------------------
@@ -76,5 +75,15 @@ enum Messages {
         This project is intended for educational and demonstration purposes only, as part of a private programming portfolio. 
         It is not distributed or promoted commercially.
         ------------------------------------------------------------------------------------------
+        """
+    
+    static let choosePokemon = """
+        Oh! I almost forgot! You should never start your journey without a Pokémon by your side.
+        
+        Lucky for you, the creator of this game decided to gift you a starter Pokémon.
+        
+        The Pokémon you choose now will accompany you throughout your entire journey. Some might even say it’s the most important decision of your life!
+        
+        So... Who will it be?
         """
 }
