@@ -22,3 +22,6 @@ func gameOverMessage() {
 func printCharmander() {
     print(AsciiArt.charmanderBig)
 }
+
+
+// TODO: Implement the GameController for the flow here and replace the test calls.

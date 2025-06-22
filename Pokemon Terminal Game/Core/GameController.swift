@@ -13,10 +13,11 @@ final class GameController {
         while isRunning {
             switch currentState {
             case .welcome:
-                handleWelcome()
+                // TODO: Implement my logic with a handler function
+                print()
             case .mainMenu:
-                handleMainMenuMessage()
-                isRunning = false
+                // TODO: Implement my logic with a handler function
+                print()
             case .playMenu:
                 // TODO: Implement my logic with a handler function
                 print()
@@ -47,29 +48,17 @@ final class GameController {
     // MARK: - State Handler Functions
 
     private func handleWelcome() {
-        print(Messages.welcome)
-        handleWelcomeInput()
+        // TODO: Implement function
     }
     
     private func handleWelcomeInput() {
-        print(Messages.inputPromptNext)
-        
-        let input = readLine() ?? ""
-        
-        if input.lowercased() == "n" {
-            currentState = GameState.mainMenu
-        } else {
-            print("Invalid input. Please try again.")
-            handleWelcome()
-        }
+        // TODO: Implement function
     }
     
     private func handleMainMenuMessage() {
-        print(Messages.mainMenu)
-        
+        // TODO: Implement function
     }
 
 }
 
-// TODO: Extract the input logic into a helper utility function
 // TODO: Take more time to rework the game state flow and handler funcs
