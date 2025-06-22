@@ -13,11 +13,11 @@ final class GameController {
         while isRunning {
             switch currentState {
             case .welcome:
-                // TODO: Implement my logic with a handler function
-                print()
+                handleWelcome()
             case .mainMenu:
-                // TODO: Implement my logic with a handler function
-                print()
+                handleMainMenuMessage()
+                // just a quick exit from the run to test the flow. Gonna be removed later on.
+                isRunning = false
             case .playMenu:
                 // TODO: Implement my logic with a handler function
                 print()
@@ -48,17 +48,21 @@ final class GameController {
     // MARK: - State Handler Functions
 
     private func handleWelcome() {
-        // TODO: Implement function
+        print(AsciiArt.titleSplash)
+        print(Messages.welcome)
+        handleWelcomeInput()
     }
     
     private func handleWelcomeInput() {
-        // TODO: Implement function
+        InputHandler.waitForInput("n", message: Messages.inputPromptNext) {
+            [weak self] in
+                self?.currentState = .mainMenu
+        }
     }
     
     private func handleMainMenuMessage() {
-        // TODO: Implement function
+        print(Messages.mainMenu)
     }
-
 }
 
 // TODO: Take more time to rework the game state flow and handler funcs

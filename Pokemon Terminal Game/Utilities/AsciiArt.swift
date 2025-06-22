@@ -4,6 +4,18 @@
 /// Intended for stylistic presentation and game flavor.
 enum AsciiArt {
     
+    static let titleSplash: String = #"""
+______         _            _____                         _                _   _____                         
+| ___ \       | |          |_   _|                       (_)              | | |  __ \                        
+| |_/ /  ___  | | __  ___    | |    ___  _ __  _ __ ___   _  _ __    __ _ | | | |  \/  __ _  _ __ ___    ___ 
+|  __/  / _ \ | |/ / / _ \   | |   / _ \| '__|| '_ ` _ \ | || '_ \  / _` || | | | __  / _` || '_ ` _ \  / _ \
+| |    | (_) ||   < |  __/   | |  |  __/| |   | | | | | || || | | || (_| || | | |_\ \| (_| || | | | | ||  __/
+\_|     \___/ |_|\_\ \___|   \_/   \___||_|   |_| |_| |_||_||_| |_| \__,_||_|  \____/ \__,_||_| |_| |_| \___|
+                                                                                                             
+[Created as a portfolio piece by Joshua Scherer]
+
+"""#
+    
     /// A large ASCII art of Charmander used for dramatic flair or battle scenes.
     static let charmanderBig: String = """
                          .-.,__
