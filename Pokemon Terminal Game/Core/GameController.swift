@@ -17,7 +17,7 @@ final class GameController {
             case .mainMenu:
                 handleMainMenu()
             case .newGame:
-                newGame()
+                handleNewGame()
                 // just a quick exit from the run to test the flow. Gonna be removed later on.
                 isRunning = false
             case .continueGame:
@@ -51,6 +51,7 @@ final class GameController {
                 // just a quick exit from the run to test the flow. Gonna be removed later on.
                 isRunning = false
             case .exit:
+                print("Exiting the game for now...")
                 isRunning = false
             }
         }
@@ -58,16 +59,12 @@ final class GameController {
     
     // MARK: - State Handler Functions
 
-    /// Displays the welcome ASCII splash and welcome message,
-    /// then waits for the user to continue.
     private func handleWelcome() {
         print(AsciiArt.titleSplash)
         print(Messages.legalDisclaimer)
         handleWelcomeInput()
     }
     
-    /// Waits for the user to press "n" to proceed from the welcome screen.
-    /// Uses a trailing closure to safely modify `currentState`.
     private func handleWelcomeInput() {
         InputHandler.waitForInput("n", message: Messages.inputPromptNext) {
             // Using [weak self] avoids a retain cycle in case this closure
@@ -96,13 +93,27 @@ final class GameController {
         }
     }
     
-    /// Displays the main menu options.
     private func handleMainMenuMessage() {
         print(Messages.mainMenu)
     }
     
-    private func newGame() {
+    private func handleNewGame() {
         handleNewGameMessages()
+        InputHandler.waitForOptions(["1", "2", "3", "4"], message: Messages.inputPromptNumbers) { [weak self] choice in
+            switch choice {
+                case "1":
+                    self?.currentState = .exit
+                case "2":
+                    self?.currentState = .exit
+                case "3":
+                    self?.currentState = .exit
+                case "4":
+                    self?.currentState = .exit
+                default:
+                    // Should never happen but implemented default case to adhere to clean code guidlines.
+                    print("Invalid option.")
+            }
+        }
     }
     
     private func handleNewGameMessages() {
