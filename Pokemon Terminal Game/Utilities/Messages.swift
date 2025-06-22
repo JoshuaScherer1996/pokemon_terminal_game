@@ -44,9 +44,9 @@ enum Messages {
         **********************************************
         
         Congratulations!
-
+        
         You’ve caught all 151 Pokémon and completed your Pokédex.
-
+        
         You’ve proven yourself to be the best Trainer in your region! Now take good care of your Pokémon and get ready to face the next challenge in your life.
         
         ***********************************************
@@ -65,4 +65,16 @@ enum Messages {
     
     /// Prompts the player to continue.
     static let inputPromptNext = "Please enter 'n' to continue..."
+    
+    static let legalDisclaimer = """
+        ------------------------------------------------------------------------------------------
+        © Legal Disclaimer
+        
+        This project is not affiliated with Nintendo, Game Freak, or The Pokémon Company in any way. 
+        This project is a non-commercial fan-made portfolio piece. I do not own the rights to Pokémon. 
+        All rights to the Pokémon franchise, including characters, names, and assets, are the property of The Pokémon Company, Nintendo, Game Freak, and Creatures Inc. 
+        This project is intended for educational and demonstration purposes only, as part of a private programming portfolio. 
+        It is not distributed or promoted commercially.
+        ------------------------------------------------------------------------------------------
+        """
 }

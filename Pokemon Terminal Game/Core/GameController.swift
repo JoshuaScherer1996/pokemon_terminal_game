@@ -51,6 +51,7 @@ final class GameController {
     /// then waits for the user to continue.
     private func handleWelcome() {
         print(AsciiArt.titleSplash)
+        print(Messages.legalDisclaimer)
         print(Messages.welcome)
         handleWelcomeInput()
     }
