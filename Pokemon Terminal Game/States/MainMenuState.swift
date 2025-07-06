@@ -1,4 +1,4 @@
-// MARK: - Main Menu State
+// MARK: Main Menu State
 
 /// Represents the main menu of the game, allowing the player to select from the core options new game, continue, credits, or exit.
 struct MainMenuState: GameState {
@@ -19,14 +19,13 @@ struct MainMenuState: GameState {
         switch choice {
         case "1":
             io.print(Messages.exit)
-            return .end
+            return .push(NewGameState())
         case "2":
             io.print(Messages.noSave)        // Placeholder for save/load function
             return .end
         case "3":
             io.print(Messages.credits)
-            io.print(Messages.exit)
-            return .end
+            return .stay
         case "4":
             io.print(Messages.exit)
             return .end

@@ -90,6 +90,7 @@ enum Messages {
         """
     /// Information about the development.
     static let credits = """
+    
         ***********************************************
         **                 CREDITS                   **
         ***********************************************
@@ -117,8 +118,9 @@ enum Messages {
         ***********************************************
         **         Thanks for playing! ❤️            **
         ***********************************************
+    
     """
     
-    static let exit = "Exiting the Game. See ya!"
+    static let exit = "Exiting the Game. Bye!"
 
 }
