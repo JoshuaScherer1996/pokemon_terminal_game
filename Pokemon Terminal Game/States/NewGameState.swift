@@ -42,7 +42,6 @@ struct NewGameState: GameState {
         context.currentPokemon = starter
         context.pokedex.gotCaught(starter)
 
-        io.print(Messages.exit)
-        return .end
+        return .push(PlayMenuState())
     }
 }

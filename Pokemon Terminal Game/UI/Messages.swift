@@ -37,6 +37,17 @@ enum Messages {
        
        """
     
+    static let playMenu = """
+       ----------------------------------
+                   PLAY MENU
+       ----------------------------------
+       1. Encounter wild Pokémon
+       2. Change your active Pokémon
+       3. View Pokédex
+       4. Return to Main Menu
+       
+       """
+    
     /// Message shown after completing the full Pokedex.
     static let fullDex = """
         
