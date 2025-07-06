@@ -146,3 +146,13 @@ final class GameController {
         print("Save functions currently not available. Exiting...")
     }
 }
+
+
+// TODO: Need to solve God Object problem -> State pattern
+
+// Notes for myself regarding what needs to be implemented next
+// TODO: GameContext class -> Holds all shared game data and services that every game state can access.
+// TODO: GameState protocol -> Defines a protocol that every game state (e.g. menus, battles, screens) implements.
+// TODO: State transition Enum -> A simple enum that tells the GameCoordinator what should happen after a state is executed.
+// TODO: Game Coordinator -> Cleanly separates what each state does from how the game moves forward. That logic lives in one central place (the coordinator).
+// TODO: Terminal IO -> Manages the overall game loop and flow between different states.
