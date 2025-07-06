@@ -1,7 +1,7 @@
 // MARK: Enum representing the different game states
 
 /// Describes all major states the game can be in.
-enum GameState {
+enum GameStateDeprecated {
     case welcome
     case mainMenu
     case newGame

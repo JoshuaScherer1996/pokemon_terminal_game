@@ -29,7 +29,7 @@
 			membershipExceptions = (
 				Core/Deprecated/Game.swift,
 				Core/Deprecated/GameController.swift,
-				Core/GameState.swift,
+				Core/Deprecated/GameStateDeprecated.swift,
 				Data/Pokemon/Model/Pokemon.swift,
 				Data/Pokemon/Model/PokeType.swift,
 				Data/Pokemon/PokeFactory.swift,
@@ -45,6 +45,7 @@
 				Utilities/PokeParser.swift,
 				Utilities/Protocols/Battle.swift,
 				Utilities/Protocols/Capture.swift,
+				Utilities/Protocols/GameState.swift,
 				Utilities/Protocols/TerminalIO.swift,
 			);
 			target = 27DA390B2DFDB50600BBA99B /* PokemonTerminalGameTests */;

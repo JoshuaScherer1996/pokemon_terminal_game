@@ -4,7 +4,7 @@
 final class GameController {
     
     /// The current active game state.
-    private var currentState: GameState = .welcome
+    private var currentState: GameStateDeprecated = .welcome
     
     /// Starts the game loop and handles the active state transitions with help of the handler functions.
     func run() {
