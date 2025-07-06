@@ -37,12 +37,14 @@
 				main.swift,
 				UI/AsciiArt.swift,
 				UI/Messages.swift,
+				UI/StdTerminalIO.swift,
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
 				Utilities/InputHandler.swift,
 				Utilities/PokeParser.swift,
 				Utilities/Protocols/Battle.swift,
 				Utilities/Protocols/Capture.swift,
+				Utilities/Protocols/TerminalIO.swift,
 			);
 			target = 27DA390B2DFDB50600BBA99B /* PokemonTerminalGameTests */;
 		};
