@@ -94,7 +94,7 @@ enum Messages {
         **                 CREDITS                   **
         ***********************************************
     
-        Pokémon Terminal Edition – Portfolio Showcase
+        Pokémon Terminal Game – Portfolio Showcase
 
         Developed by Joshua Scherer
         Built entirely in Swift as a CLI game
@@ -118,5 +118,7 @@ enum Messages {
         **         Thanks for playing! ❤️            **
         ***********************************************
     """
+    
+    static let exit = "Exiting the Game. See ya!"
 
 }

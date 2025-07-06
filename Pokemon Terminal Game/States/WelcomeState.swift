@@ -13,6 +13,6 @@ struct WelcomeState: GameState {
         io.print(AsciiArt.titleSplash)
         io.print(Messages.legalDisclaimer)
         io.waitFor("n", prompt: Messages.inputPromptNext)
-        return .end
+        return .push(MainMenuState())
     }
 }

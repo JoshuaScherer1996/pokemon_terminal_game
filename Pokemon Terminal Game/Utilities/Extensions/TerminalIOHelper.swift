@@ -11,7 +11,7 @@ extension TerminalIO {
     func waitFor(_ expected: String, prompt: String) {
         print(prompt)
         while readLine().lowercased() != expected.lowercased() {
-            print("Invalid input. Try again:")
+            print("Invalid input. Please try again:")
         }
     }
 
@@ -25,7 +25,7 @@ extension TerminalIO {
         print(prompt)
         var input = readLine().lowercased()
         while !options.contains(input) {
-            print("Invalid choice. Try again:")
+            print("Invalid choice. Please try again:")
             input = readLine().lowercased()
         }
         return input
