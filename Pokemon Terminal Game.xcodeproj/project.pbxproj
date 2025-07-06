@@ -27,9 +27,9 @@
 		27F2AE352DFDCC830007F985 /* Exceptions for "Pokemon Terminal Game" folder in "PokemonTerminalGameTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Core/Game.swift,
-				Core/GameController.swift,
-				Core/GameState.swift,
+				Core/Deprecated/Game.swift,
+				Core/Deprecated/GameController.swift,
+				Core/Deprecated/GameState.swift,
 				Data/Pokemon/Model/Pokemon.swift,
 				Data/Pokemon/Model/PokeType.swift,
 				Data/Pokemon/PokeFactory.swift,
