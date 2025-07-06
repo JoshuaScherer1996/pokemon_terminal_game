@@ -29,7 +29,7 @@
 			membershipExceptions = (
 				Core/Deprecated/Game.swift,
 				Core/Deprecated/GameController.swift,
-				Core/Deprecated/GameState.swift,
+				Core/GameState.swift,
 				Data/Pokemon/Model/Pokemon.swift,
 				Data/Pokemon/Model/PokeType.swift,
 				Data/Pokemon/PokeFactory.swift,
