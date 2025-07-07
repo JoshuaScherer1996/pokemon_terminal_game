@@ -18,7 +18,6 @@ struct MainMenuState: GameState {
 
         switch choice {
         case "1":
-            io.print(Messages.exit)
             return .push(NewGameState())
         case "2":
             io.print(Messages.noSave)        // Placeholder for save/load function

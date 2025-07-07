@@ -27,6 +27,7 @@ enum Messages {
     
     /// Main menu options shown during the main menu state.
     static let mainMenu = """
+       
        ----------------------------------
                    MAIN MENU
        ----------------------------------
@@ -34,18 +35,17 @@ enum Messages {
        2. Continue
        3. Credits
        4. Exit
-       
        """
     
     static let playMenu = """
+       
        ----------------------------------
                    PLAY MENU
        ----------------------------------
        1. Encounter wild Pokémon
        2. Change your active Pokémon
        3. View Pokédex
-       4. Return to Main Menu
-       
+       4. Return to Main Menu       
        """
     
     /// Message shown after completing the full Pokedex.
@@ -68,16 +68,26 @@ enum Messages {
         """
     
     /// Informartion to the player if they haven't saved a game yet.
-    static let noSave = "You currently have no save file."
+    static let noSave = """
+        
+        You currently have no save file.
+        """
     
     /// Prompts the player to choose an option based on the input.
-    static let inputPromptNumbers = "Please enter a number between 1 and 4."
+    static let inputPromptNumbers = """
+        
+        Please enter a number between 1 and 4.
+        """
     
     /// Prompts the player to continue.
-    static let inputPromptNext = "Please enter 'n' to continue..."
+    static let inputPromptNext = """
+        
+        Please enter 'n' to continue...
+        """
     
     /// Legal disclaimer to display transparently who owns what.
     static let legalDisclaimer = """
+        
         ------------------------------------------------------------------------------------------
         © Legal Disclaimer
         
@@ -87,10 +97,12 @@ enum Messages {
         This project is intended for educational and demonstration purposes only, as part of a private programming portfolio. 
         It is not distributed or promoted commercially.
         ------------------------------------------------------------------------------------------
+        
         """
     
     /// Prompts the player to choose a Pokemon.
     static let choosePokemon = """
+        
         Oh! I almost forgot! You should never start your journey without a Pokémon by your side.
         
         Lucky for you, the creator of this game decided to gift you a starter Pokémon.
@@ -132,6 +144,9 @@ enum Messages {
     
     """
     
-    static let exit = "Exiting the Game. Bye!"
+    static let exit = """
+        
+        Exiting the Game. Bye!
+        """
 
 }

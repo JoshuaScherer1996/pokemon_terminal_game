@@ -12,9 +12,19 @@ struct PlayMenuState: GameState {
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         // Confirm current Pokemon selection
         if let current = context.currentPokemon {
-            io.print("You chose \(current.name)! A great choice!")
+            io.print(
+                    """
+                    
+                    You chose \(current.name)! A great choice!
+                    """
+            )
         } else {
-            io.print("No Pokémon selected. Returning to main menu.")
+            io.print(
+                    """
+                    
+                    No Pokémon selected. Returning to main menu.
+                    """
+            )
             return .push(MainMenuState())
         }
 
@@ -27,19 +37,39 @@ struct PlayMenuState: GameState {
 
         switch choice {
         case "1":
-            io.print("Wild encounter coming soon...")  // Placeholder
+            io.print(
+                    """
+                    
+                    Wild encounter coming soon...
+                    """
+            )  // Placeholder
             return .stay
 
         case "2":
-            io.print("Change Pokémon feature not implemented yet.")  // Placeholder
+            io.print(
+                """
+
+                Change Pokémon feature not implemented yet.
+                """
+            )  // Placeholder
             return .stay
 
         case "3":
-            io.print("Show Pokédex feature not implemented yet.")
+            io.print(
+                """
+                
+                Show Pokédex feature not implemented yet.
+                """
+            )
             return .stay
 
         case "4":
-            io.print("Returning to Main Menu...")
+            io.print(
+                """
+
+                Returning to Main Menu...
+                """
+            )
             return .push(MainMenuState())
 
         default:
