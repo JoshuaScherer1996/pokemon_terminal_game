@@ -37,6 +37,7 @@ enum Messages {
        4. Exit
        """
     
+    /// Play menu options shown during the play menu state.
     static let playMenu = """
        
        ----------------------------------
@@ -68,22 +69,13 @@ enum Messages {
         """
     
     /// Informartion to the player if they haven't saved a game yet.
-    static let noSave = """
-        
-        You currently have no save file.
-        """
+    static let noSave = "\nYou currently have no save file."
     
     /// Prompts the player to choose an option based on the input.
-    static let inputPromptNumbers = """
-        
-        Please enter a number between 1 and 4.
-        """
+    static let inputPromptNumbers = "\nPlease enter a number between 1 and 4."
     
     /// Prompts the player to continue.
-    static let inputPromptNext = """
-        
-        Please enter 'n' to continue...
-        """
+    static let inputPromptNext = "\nPlease enter 'n' to continue..."
     
     /// Legal disclaimer to display transparently who owns what.
     static let legalDisclaimer = """
@@ -144,13 +136,9 @@ enum Messages {
     
     """
     
-    static let exit = """
-        
-        Exiting the Game. See ya around!
-        
-        """
+    /// Informartion to the player that they are now exiting the game
+    static let exit = "\nExiting the Game. See ya around!\n"
 
+    /// Title shown at the start of the pokedex state
     static let currentPokedex = "\nThis is your current Pokedex:\n"
 }
-
-// TODO: remwork messages with line breake "\n"
