@@ -41,6 +41,8 @@ struct NewGameState: GameState {
         // Store the selected starter in the shared game context.
         context.currentPokemon = starter
         context.pokedex.gotCaught(starter)
+        
+        io.print("\nYou chose \(starter.name)! A great choice!\n")
 
         return .push(PlayMenuState())
     }

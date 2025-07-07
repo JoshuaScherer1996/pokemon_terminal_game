@@ -10,24 +10,6 @@ struct PlayMenuState: GameState {
     ///   - io: The terminal input/output interface.
     /// - Returns: A state transition depending on the user's menu choice.
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
-        // Confirm current Pokemon selection
-        if let current = context.currentPokemon {
-            io.print(
-                    """
-                    
-                    You chose \(current.name)! A great choice!
-                    """
-            )
-        } else {
-            io.print(
-                    """
-                    
-                    No Pokémon selected. Returning to main menu.
-                    """
-            )
-            return .push(MainMenuState())
-        }
-
         // Display the play menu
         io.print(Messages.playMenu)
         let choice = io.waitFor(
