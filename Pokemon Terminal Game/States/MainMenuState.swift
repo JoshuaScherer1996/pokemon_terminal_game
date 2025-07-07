@@ -21,9 +21,11 @@ struct MainMenuState: GameState {
             return .push(NewGameState())
         case "2":
             io.print(Messages.noSave)        // Placeholder for save/load function
-            return .end
+            io.waitFor("n", prompt: Messages.inputPromptNext)
+            return .stay
         case "3":
             io.print(Messages.credits)
+            io.waitFor("n", prompt: Messages.inputPromptNext)
             return .stay
         case "4":
             io.print(Messages.exit)

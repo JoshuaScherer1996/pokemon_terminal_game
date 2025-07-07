@@ -146,7 +146,8 @@ enum Messages {
     
     static let exit = """
         
-        Exiting the Game. Bye!
+        Exiting the Game. See ya around!
+        
         """
 
 }
