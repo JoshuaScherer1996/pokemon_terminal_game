@@ -37,13 +37,7 @@ struct PlayMenuState: GameState {
             return .stay
 
         case "3":
-            io.print(
-                """
-                
-                Show Pokédex feature not implemented yet.
-                """
-            )
-            return .stay
+            return .push(PokedexState())
 
         case "4":
             io.print(

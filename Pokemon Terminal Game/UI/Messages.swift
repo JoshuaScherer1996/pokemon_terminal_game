@@ -150,4 +150,7 @@ enum Messages {
         
         """
 
+    static let currentPokedex = "\nThis is your current Pokedex:\n"
 }
+
+// TODO: remwork messages with line breake "\n"
