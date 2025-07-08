@@ -22,7 +22,7 @@ final class PokedexManager {
     ///
     /// - Parameter pokemon: The `Pokemon` instance that has just been caught.
     func gotCaught(_ pokemon: Pokemon) {
-        caughtIDs.insert(Int(starter.id) ?? 0)
+        caughtIDs.insert(Int(pokemon.id) ?? 0)
     }
     
     /// Returns all Pokedex entries, making only caught Pokemon visible.
