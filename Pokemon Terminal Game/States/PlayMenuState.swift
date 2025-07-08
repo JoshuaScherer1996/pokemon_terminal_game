@@ -28,13 +28,7 @@ struct PlayMenuState: GameState {
             return .stay
 
         case "2":
-            io.print(
-                """
-
-                Change Pokémon feature not implemented yet.
-                """
-            )  // Placeholder
-            return .stay
+            return .push(ChangePokemonState())
 
         case "3":
             return .push(PokedexState())
