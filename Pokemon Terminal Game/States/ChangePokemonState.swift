@@ -16,7 +16,7 @@ struct ChangePokemonState: GameState {
         let caughtIDs = context.pokedex.caughtIDs
         let allPokemon = context.pokedex.showEntries()
         
-        io.print("\nYour caught Pokémon:\n")
+        io.print(Messages.titleCaughtPokemon)
         
         // Shows only caught Pokemon
         for pokemon in allPokemon where caughtIDs.contains(pokemon.id) {
@@ -24,22 +24,21 @@ struct ChangePokemonState: GameState {
             io.print("ID: \(idString), Name: \(pokemon.name), Type: \(pokemon.type)")
         }
         
-        io.print("\nEnter the ID of the Pokémon you'd like to switch to.")
-        io.print("Or press 'n' to cancel and return to the play menu.")
+        io.print(Messages.changePokemonInput)
         
         var validSelection = false
         repeat {
             let input = io.readLine().lowercased()
             
             if input == "n" {
-                io.print("\nNo changes made. Returning to play menu.\n")
+                io.print(Messages.pokemonNotChanged)
                 return .pop
             }
             
             // Checks if the input ID is valid
             guard let idInt = Int(input), caughtIDs.contains(idInt),
                   let selected = PokeFactory.allPokemon().first(where: { Int($0.id) == idInt }) else {
-                io.print("Invalid choice. Please enter a valid ID or 'n' to cancel:")
+                io.print(Messages.invalidId)
                 continue
             }
             

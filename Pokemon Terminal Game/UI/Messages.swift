@@ -141,4 +141,21 @@ enum Messages {
 
     /// Title shown at the start of the pokedex state
     static let currentPokedex = "\nThis is your current Pokedex:\n"
+    
+    /// Title shown at the start of the change pokemon state
+    static let titleCaughtPokemon = "\nYour currently caught Pokémon are:\n"
+    
+    /// Message prompting the player to input the id / go back
+    static let changePokemonInput = """
+        
+        Enter the ID of the Pokémon you'd like to switch to.
+        Otherwise press 'n' to cancel and return to the play menu.
+        
+        """
+    
+    /// Info for the player if they made no changes and decided to go back to the play menu
+    static let pokemonNotChanged = "\nNo changes made. Returning to play menu.\n"
+    
+    /// Information for the player about an invalid ID input
+    static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"
 }
