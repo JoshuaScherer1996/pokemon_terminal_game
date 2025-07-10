@@ -11,6 +11,7 @@ struct ChangePokemonState: GameState {
     /// - Returns: `.pop` to return to the previous state (play menu).
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         
+        let currentID = Int(context.currentPokemon?.id ?? "") ?? 0
         io.print("\nCurrently you have \(context.currentPokemon!.name) by your side!\n")
         
         let caughtIDs = context.pokedex.caughtIDs
@@ -18,10 +19,11 @@ struct ChangePokemonState: GameState {
         
         io.print(Messages.titleCaughtPokemon)
         
-        // Shows only caught Pokemon
+        // Shows only caught Pokemon and sets the marker on the current Pokemon
         for pokemon in allPokemon where caughtIDs.contains(pokemon.id) {
             let idString = String(format: "%03d", pokemon.id)   // 1 -> "001"
-            io.print("ID: \(idString), Name: \(pokemon.name), Type: \(pokemon.type)")
+            let marker = (pokemon.id == currentID) ? "[CURRENT] -> " : ""
+            io.print("\(marker)ID: \(idString), Name: \(pokemon.name), Type: \(pokemon.type)")
         }
         
         io.print(Messages.changePokemonInput)
@@ -35,6 +37,11 @@ struct ChangePokemonState: GameState {
                 return .pop
             }
             
+            if input == String(format: "%03d", currentID) || input == "\(currentID)" {
+                io.print(Messages.alreadySelected)
+                continue
+            }
+            
             // Checks if the input ID is valid
             guard let idInt = Int(input), caughtIDs.contains(idInt),
                   let selected = PokeFactory.allPokemon().first(where: { Int($0.id) == idInt }) else {
@@ -43,7 +50,7 @@ struct ChangePokemonState: GameState {
             }
             
             context.currentPokemon = selected
-            io.print("\nSwitched to \(selected.name)!\n")
+            io.print("\nSwitched to \(selected.name)!")
             validSelection = true
         } while !validSelection
         

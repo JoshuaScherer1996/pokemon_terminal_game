@@ -158,4 +158,7 @@ enum Messages {
     
     /// Information for the player about an invalid ID input
     static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"
+    
+    /// Information
+    static let alreadySelected = "\nYou already have this Pokémon with you. Please choose another one or press 'n' to cancel."
 }
