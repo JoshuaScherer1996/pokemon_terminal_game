@@ -11,10 +11,12 @@ struct ChangePokemonState: GameState {
     /// - Returns: `.pop` to return to the previous state (play menu).
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         
+        io.print("\nCurrently you have \(context.currentPokemon!.name) by your side!\n")
+        
         let caughtIDs = context.pokedex.caughtIDs
         let allPokemon = context.pokedex.showEntries()
         
-        io.print("\nCaught Pokémon:\n")
+        io.print("\nYour caught Pokémon:\n")
         
         // Shows only caught Pokemon
         for pokemon in allPokemon where caughtIDs.contains(pokemon.id) {
@@ -25,24 +27,27 @@ struct ChangePokemonState: GameState {
         io.print("\nEnter the ID of the Pokémon you'd like to switch to.")
         io.print("Or press 'n' to cancel and return to the play menu.")
         
-        while true {
+        var validSelection = false
+        repeat {
             let input = io.readLine().lowercased()
             
             if input == "n" {
-                io.print("\nNo changes made. Returning to play menu.")
+                io.print("\nNo changes made. Returning to play menu.\n")
                 return .pop
             }
             
             // Checks if the input ID is valid
-            if let idInt = Int(input), caughtIDs.contains(idInt),
-               let selected = PokeFactory.allPokemon().first(where: { Int($0.id) == idInt }) {
-                
-                context.currentPokemon = selected
-                io.print("\nSwitched to \(selected.name)!\n")
-                return .pop
+            guard let idInt = Int(input), caughtIDs.contains(idInt),
+                  let selected = PokeFactory.allPokemon().first(where: { Int($0.id) == idInt }) else {
+                io.print("Invalid choice. Please enter a valid ID or 'n' to cancel:")
+                continue
             }
             
-            io.print("Invalid choice. Please enter a valid ID or 'n' to cancel:")
-        }
+            context.currentPokemon = selected
+            io.print("\nSwitched to \(selected.name)!\n")
+            validSelection = true
+        } while !validSelection
+        
+        return .pop
     }
 }
