@@ -154,7 +154,7 @@ enum Messages {
         """
     
     /// Info for the player if they made no changes and decided to go back to the play menu
-    static let pokemonNotChanged = "\nNo changes made. Returning to play menu.\n"
+    static let pokemonNotChanged = "\nNo changes were made. Returning to play menu.\n"
     
     /// Information for the player about an invalid ID input
     static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"

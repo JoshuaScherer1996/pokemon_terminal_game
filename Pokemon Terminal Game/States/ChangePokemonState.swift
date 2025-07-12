@@ -1,59 +1,19 @@
 // MARK: Change Pokemon State
 
-/// Allows the player to switch their current Pokemon to another one they've already caught.
+/// A game state that allows the player to switch their current Pokemon.
+///
+/// This state delegates the logic to `ChangePokemonService`, enabling reuse across multiple contexts (e.g. in battle or menus). After the selection is made, the state returns to the previous menu.
 struct ChangePokemonState: GameState {
     
-    /// Displays caught Pokemon and allows the player to select a new one or cancel.
+    /// Runs the state and invokes the Pokemon change service.
     ///
     /// - Parameters:
-    ///   - context: The shared game context holding current Pokemon and Pokedex.
-    ///   - io: The terminal input/output interface.
-    /// - Returns: `.pop` to return to the previous state (play menu).
+    ///   - context: The shared game context containing current Pokemon and Pokedex data.
+    ///   - io: The terminal interface for input and output operations.
+    /// - Returns: `.pop` to return to the previous game state.
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
-        
-        let currentID = Int(context.currentPokemon?.id ?? "") ?? 0
-        io.print("\nCurrently you have \(context.currentPokemon!.name) by your side!\n")
-        
-        let caughtIDs = context.pokedex.caughtIDs
-        let allPokemon = context.pokedex.showEntries()
-        
-        io.print(Messages.titleCaughtPokemon)
-        
-        // Shows only caught Pokemon and sets the marker on the current Pokemon
-        for pokemon in allPokemon where caughtIDs.contains(pokemon.id) {
-            let idString = String(format: "%03d", pokemon.id)   // 1 -> "001"
-            let marker = (pokemon.id == currentID) ? "[CURRENT] -> " : ""
-            io.print("\(marker)ID: \(idString), Name: \(pokemon.name), Type: \(pokemon.type)")
-        }
-        
-        io.print(Messages.changePokemonInput)
-        
-        var validSelection = false
-        repeat {
-            let input = io.readLine().lowercased()
-            
-            if input == "n" {
-                io.print(Messages.pokemonNotChanged)
-                return .pop
-            }
-            
-            if input == String(format: "%03d", currentID) || input == "\(currentID)" {
-                io.print(Messages.alreadySelected)
-                continue
-            }
-            
-            // Checks if the input ID is valid
-            guard let idInt = Int(input), caughtIDs.contains(idInt),
-                  let selected = PokeFactory.allPokemon().first(where: { Int($0.id) == idInt }) else {
-                io.print(Messages.invalidId)
-                continue
-            }
-            
-            context.currentPokemon = selected
-            io.print("\nSwitched to \(selected.name)!")
-            validSelection = true
-        } while !validSelection
-        
+        let service = ChangePokemonService()
+        service.changePokemon(in: context, using: io)
         return .pop
     }
 }

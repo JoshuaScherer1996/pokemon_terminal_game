@@ -8,7 +8,8 @@ final class ChangePokemonService {
     /// - Parameters:
     ///   - context: The shared game context, including current Pokemon and Pokedex.
     ///   - io: Terminal interface for input and output.
-    /// - Returns: `true` if a new Pokemon was selected, `false` if the action was cancelled or no change occurred.
+    /// - Returns: `true` if a new Pokemon was selected, `false` if the action was cancelled or no change occurred. This return value is marked as `@discardableResult` and can be ignored if not used.
+    @discardableResult
     func changePokemon(in context: GameContext, using io: TerminalIO) -> Bool {
         guard let current = context.currentPokemon else {
             io.print("Error: No Pokémon currently selected.")
