@@ -11,10 +11,10 @@ struct NewGameState: GameState {
     /// - Returns: Exits the game for now.
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         io.print(Messages.choosePokemon)
-        io.print(AsciiArt.bulbasaur)
-        io.print(AsciiArt.charmander)
-        io.print(AsciiArt.squirtle)
-        io.print(AsciiArt.pikachu)
+        io.print(AsciiUIArt.bulbasaurStarter)
+        io.print(AsciiUIArt.charmanderStarter)
+        io.print(AsciiUIArt.squirtleStarter)
+        io.print(AsciiUIArt.pikachuStarter)
 
         let choice = io.waitFor(
             options: ["1", "2", "3", "4"],

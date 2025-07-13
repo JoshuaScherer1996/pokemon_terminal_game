@@ -20,7 +20,7 @@ func gameOverMessage() {
 
 /// Prints a Charmander ASCII art.
 func printCharizard() {
-    print(AsciiArt.Charizard)
+    print(AsciiUIArt.Charizard)
 }
 
 

@@ -60,7 +60,7 @@ final class GameController {
     
     /// Shows splash screen and disclaimer, then waits for user to continue.
     private func handleWelcome() {
-        print(AsciiArt.titleSplash)
+        print(AsciiUIArt.titleSplash)
         print(Messages.legalDisclaimer)
         handleWelcomeInput()
     }
@@ -124,10 +124,10 @@ final class GameController {
     private func handleNewGameMessages() {
         print(Messages.greetings)
         print(Messages.choosePokemon)
-        print(AsciiArt.bulbasaur)
-        print(AsciiArt.charmander)
-        print(AsciiArt.squirtle)
-        print(AsciiArt.pikachu)
+        print(AsciiUIArt.bulbasaurStarter)
+        print(AsciiUIArt.charmanderStarter)
+        print(AsciiUIArt.squirtleStarter)
+        print(AsciiUIArt.pikachuStarter)
     }
     
     /// Placeholder for loading saved game.

@@ -10,7 +10,7 @@ struct WelcomeState: GameState {
     ///   - io: Handles user input and output in the terminal.
     /// - Returns: Ends the game or transitions to the next state.
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
-        io.print(AsciiArt.titleSplash)
+        io.print(AsciiUIArt.titleSplash)
         io.print(Messages.legalDisclaimer)
         io.waitFor("n", prompt: Messages.inputPromptNext)
         return .push(MainMenuState())

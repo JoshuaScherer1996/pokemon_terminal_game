@@ -36,7 +36,7 @@
 				Data/Pokemon/PokeFactory.swift,
 				Data/Pokemon/PokemonRawData.swift,
 				main.swift,
-				UI/AsciiArt.swift,
+				UI/AsciiPokemonArt.swift,
 				UI/Messages.swift,
 				UI/StdTerminalIO.swift,
 				"Utilities/Extensions/Pokemon+Battle.swift",
