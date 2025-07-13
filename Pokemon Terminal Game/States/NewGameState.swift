@@ -12,9 +12,13 @@ struct NewGameState: GameState {
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         io.print(Messages.choosePokemon)
         io.print(AsciiUIArt.bulbasaurStarter)
+        io.print(AsciiPokemonArt.bulbasaur)
         io.print(AsciiUIArt.charmanderStarter)
+        io.print(AsciiPokemonArt.charmander)
         io.print(AsciiUIArt.squirtleStarter)
+        io.print(AsciiPokemonArt.squirtle)
         io.print(AsciiUIArt.pikachuStarter)
+        io.print(AsciiPokemonArt.pikachu)
 
         let choice = io.waitFor(
             options: ["1", "2", "3", "4"],

@@ -18,6 +18,7 @@ ______         _            _____                         _                _   _
     
     /// ASCII art of Bulbasaur.
     static let bulbasaurStarter: String = #"""
+        
          ___  __   ___       ______         _  _                                     
         |  _|/  | |_  |      | ___ \       | || |                                    
         | |  `| |   | |      | |_/ / _   _ | || |__    __ _  ___   __ _  _   _  _ __ 
@@ -30,6 +31,7 @@ ______         _            _____                         _                _   _
     
     /// ASCII art of Charmander.
     static let charmanderStarter: String = #"""
+        
          ___  _____  ___        _____  _                                                _             
         |  _|/ __  \|_  |      /  __ \| |                                              | |
         | |  `' / /'  | |      | /  \/| |__    __ _  _ __  _ __ ___    __ _  _ __    __| |  ___  _ __
@@ -42,6 +44,7 @@ ______         _            _____                         _                _   _
     
     /// ASCII art of Squirtle.
     static let squirtleStarter: String = #"""
+        
          ___  _____  ___        _____                _        _    _       
         |  _||____ ||_  |      /  ___|              (_)      | |  | |      
         | |      / /  | |      \ `--.   __ _  _   _  _  _ __ | |_ | |  ___ 
@@ -55,6 +58,7 @@ ______         _            _____                         _                _   _
     
     /// ASCII art of Pikachu.
     static let pikachuStarter: String = #"""
+        
          ___    ___  ___       ______  _  _                  _            
         |  _|  /   ||_  |      | ___ \(_)| |                | |           
         | |   / /| |  | |      | |_/ / _ | | __  __ _   ___ | |__   _   _ 
