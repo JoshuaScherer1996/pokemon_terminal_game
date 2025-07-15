@@ -1,3 +1,5 @@
+// MARK: Encounter Service
+
 /// A service responsible for handling wild Pokemon encounters.
 final class EncounterService {
     

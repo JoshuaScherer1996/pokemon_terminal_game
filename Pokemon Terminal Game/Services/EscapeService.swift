@@ -1,4 +1,4 @@
-// MARK: - Escape Service
+// MARK: Escape Service
 
 /// A service responsible for handling escape attempts during wild Pokemon encounters.
 final class EscapeService {

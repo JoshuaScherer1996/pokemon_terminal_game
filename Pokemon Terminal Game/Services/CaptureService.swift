@@ -1,4 +1,4 @@
-// MARK: - Capture Service
+// MARK: Capture Service
 
 /// A service responsible for handling Pokemon capture attempts based on health and difficulty.
 final class CaptureService {
