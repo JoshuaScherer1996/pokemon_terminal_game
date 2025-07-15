@@ -14,12 +14,12 @@ struct PokeFactory {
     ///   - difficulty: A list of catch difficulty values. Uses internal data by default.
     /// - Returns: An array of valid `Pokemon` instances.
     static func allPokemon(
-        numbers: [String] = pokemonNumbers,
-        names: [String] = pokemonNames,
-        types: [String] = pokemonTypes,
-        hp: [Int] = pokemonHP,
-        attack: [Int] = pokemonAttack,
-        difficulty: [Int] = pokemonCatchDifficulty
+        numbers: [String] = pokedexIDs,
+        names: [String] = names,
+        types: [String] = types,
+        hp: [Int] = hp,
+        attack: [Int] = attack,
+        difficulty: [Int] = catchDifficulty
     ) -> [Pokemon] {
         var pokedex: [Pokemon] = []
         

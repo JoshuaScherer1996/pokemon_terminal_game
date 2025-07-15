@@ -1,7 +1,7 @@
 // MARK: Raw Pokemon Data Arrays
 
-/// String values representing the Pokedex numbers.
-let pokemonNumbers: [String] = [
+/// String values representing the Pokedex ID's.
+let pokedexIDs: [String] = [
     "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
     "011", "012", "013", "014", "015", "016", "017", "018", "019", "020",
     "021", "022", "023", "024", "025", "026", "027", "028", "029", "030",
@@ -21,7 +21,7 @@ let pokemonNumbers: [String] = [
 ]
 
 /// English Pokemon names as strings.
-let pokemonNames: [String] = [
+let names: [String] = [
     "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle",
     "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto",
     "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu",
@@ -42,7 +42,7 @@ let pokemonNames: [String] = [
 ]
 
 /// Type definitions in the format "fire/flying" or just "electric".
-let pokemonTypes: [String] = [
+let types: [String] = [
     "grass/poison", "grass/poison", "grass/poison", "fire", "fire", "fire/flying", "water", "water",
     "water", "bug", "bug", "bug/flying", "bug/poison", "bug/poison", "bug/poison", "normal/flying",
     "normal/flying", "normal/flying", "normal", "normal", "normal/flying", "normal/flying", "poison", "poison",
@@ -66,7 +66,7 @@ let pokemonTypes: [String] = [
 ]
 
 /// Default health point (HP) values as Integers.
-let pokemonHP: [Int] = [
+let hp: [Int] = [
     45, 60, 80, 39, 58, 83, 44, 62, 79, 45, 50, 60, 40, 45, 65, 40, 63, 78, 30, 55,
     40, 65, 35, 60, 50, 60, 50, 75, 55, 70, 90, 46, 61, 81, 70, 95, 38, 73, 115,
     140, 40, 75, 45, 60, 75, 35, 60, 60, 50, 10, 35, 40, 65, 50, 80, 40, 55, 55, 90,
@@ -78,7 +78,7 @@ let pokemonHP: [Int] = [
 ]
 
 /// Default attack values as Integers.
-let pokemonAttack: [Int] = [
+let attack: [Int] = [
     49, 62, 82, 52, 64, 84, 48, 63, 83, 30, 20, 45, 35, 25, 90, 45, 60, 80, 56, 81,
     60, 90, 60, 85, 55, 90, 75, 100, 47, 62, 92, 57, 72, 102, 45, 70, 41, 76, 45,
     80, 45, 80, 50, 65, 80, 70, 95, 90, 55, 85, 35, 70, 60, 82, 100, 70, 100, 70,
@@ -90,7 +90,7 @@ let pokemonAttack: [Int] = [
 ]
 
 /// Default values for the catch difficulty as Integers.
-let pokemonCatchDifficulty: [Int] = [
+let catchDifficulty: [Int] = [
     30, 60, 120, 30, 60, 200, 30, 60, 120, 20, 25, 40, 20, 25, 60, 30, 80, 120, 40, 80,
     50, 100, 70, 100, 40, 80, 60, 90, 80, 90, 130, 80, 90, 140, 50, 80, 60, 110, 40, 100,
     60, 100, 40, 80, 110, 70, 110, 60, 90, 30, 90, 40, 100, 50, 90, 60, 70, 150, 50, 80,
@@ -99,4 +99,9 @@ let pokemonCatchDifficulty: [Int] = [
     50, 110, 80, 90, 120, 110, 130, 130, 130, 140, 140, 180, 60, 130, 140, 160, 120, 180,
     60, 80, 100, 90, 110, 120, 100, 140, 150, 150, 170, 10, 180, 120, 90, 90, 110, 130,
     150, 160, 160, 200, 5, 250, 250, 250, 80, 90, 220, 250, 250, 220, 250, 250
+]
+
+/// Links the corresponding pokemon art to the right data instance.
+let sprites: [String] = [
+    AsciiPokemonArt.bulbasaur
 ]
