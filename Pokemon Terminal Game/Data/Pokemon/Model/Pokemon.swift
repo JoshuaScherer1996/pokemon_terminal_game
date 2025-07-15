@@ -13,8 +13,10 @@ struct Pokemon: Equatable {
     
     let catchDifficulty: Int
     
+    let sprite: String
+    
     /// Custom initializer to set the hp based properties correctly.
-    init(id: String, name: String, type: [PokeType], maxHP: Int, attack: Int, catchDifficulty: Int) {
+    init(id: String, name: String, type: [PokeType], maxHP: Int, attack: Int, catchDifficulty: Int, sprite: String) {
         self.id = id
         self.name = name
         self.type = type
@@ -22,5 +24,6 @@ struct Pokemon: Equatable {
         self.currentHP = maxHP // sets the currentHP to the maxHP in the init.
         self.attack = attack
         self.catchDifficulty = catchDifficulty
+        self.sprite = sprite
     }
 }

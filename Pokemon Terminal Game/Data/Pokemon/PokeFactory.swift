@@ -6,20 +6,22 @@ struct PokeFactory {
     /// Creates a list of Pokemon using either default or injected custom data arrays.
     ///
     /// - Parameters:
-    ///   - numbers: A list of Pokedex numbers. Uses internal data by default.
-    ///   - names: A list of Pokemon names. Uses internal data by default.
-    ///   - types: A list of Pokemon type strings (e.g. "fire/flying"). Uses internal data by default.
-    ///   - hp: A list of max HP values. Uses internal data by default.
-    ///   - attack: A list of base attack values. Uses internal data by default.
-    ///   - difficulty: A list of catch difficulty values. Uses internal data by default.
+    ///   - ids: A list of Pokedex numbers.
+    ///   - names: A list of Pokemon names.
+    ///   - types: A list of Pokemon type strings (e.g. "fire/flying").
+    ///   - hps: A list of max HP values.
+    ///   - attacks: A list of base attack values.
+    ///   - difficulties: A list of catch difficulty values.
+    ///   - sprites: A list of all ascii artworks.
     /// - Returns: An array of valid `Pokemon` instances.
     static func allPokemon(
-        numbers: [String] = pokedexIDs,
+        ids: [String] = pokedexIDs,
         names: [String] = names,
         types: [String] = types,
-        hp: [Int] = hp,
-        attack: [Int] = attack,
-        difficulty: [Int] = catchDifficulty
+        hps: [Int] = hp,
+        attacks: [Int] = attack,
+        difficulties: [Int] = catchDifficulties,
+        sprites: [String] = sprites
     ) -> [Pokemon] {
         var pokedex: [Pokemon] = []
         
@@ -29,12 +31,13 @@ struct PokeFactory {
             }
             
             let pokemon = Pokemon(
-                id: numbers[index],
+                id: ids[index],
                 name: names[index],
                 type: type,
-                maxHP: hp[index],
-                attack: attack[index],
-                catchDifficulty: difficulty[index]
+                maxHP: hps[index],
+                attack: attacks[index],
+                catchDifficulty: difficulties[index],
+                sprite: sprites[index]
             )
             
             pokedex.append(pokemon)
