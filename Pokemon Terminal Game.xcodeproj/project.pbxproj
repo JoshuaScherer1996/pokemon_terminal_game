@@ -35,6 +35,7 @@
 				UI/AsciiPokemonArt.swift,
 				UI/Messages.swift,
 				UI/StdTerminalIO.swift,
+				"Utilities/Extensions/AsciiPokemonArt+Lookup.swift",
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
 				Utilities/Extensions/TerminalIOHelper.swift,

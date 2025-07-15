@@ -3,7 +3,13 @@
 struct EncounterState: GameState {
     
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
-        // Display the play menu
+        let encounterService = EncounterService()
+        
+        let enemyPokemon = encounterService.getRandomUncaughtPokemon(using: context.pokedex)
+        
+        
+        
+        // Display the battle menu
         io.print(Messages.battleMenu)
         let choice = io.waitFor(
             options: ["1", "2", "3", "4"],
