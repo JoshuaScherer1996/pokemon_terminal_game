@@ -53,6 +53,7 @@ final class ChangePokemonService {
             
             context.currentPokemon = selected
             io.print("\nSwitched to \(selected.name)!")
+            io.print(selected.sprite)
             return true
         }
     }
