@@ -11,4 +11,4 @@ GameCoordinator(starter: starter).run()
 // TODO: Save functionality
 // TODO: Run inside terminal functionality
 // TODO: Test coverage
-}
+
