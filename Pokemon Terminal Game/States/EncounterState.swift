@@ -9,6 +9,7 @@ struct EncounterState: GameState {
         
         io.print(Messages.wildEncounterMessage(for: enemyPokemon))
         
+        // TODO: this input logic will be implemented into the user turn in the turn based system
         // Display the battle menu
         io.print(Messages.battleMenu)
         let choice = io.waitFor(
