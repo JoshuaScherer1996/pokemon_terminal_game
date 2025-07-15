@@ -173,4 +173,18 @@ enum Messages {
     
     /// Information
     static let alreadySelected = "\nYou already have this Pokémon with you. Please choose another one or press 'n' to cancel."
+    
+    static func wildEncounterMessage(for pokemon: Pokemon) -> String {
+        return """
+    
+    You go out into the wild and suddenly hear rustling in the tall grass...
+    Something is moving—watch out!
+    
+    A wild \(pokemon.name) appeared!
+    
+    \(pokemon.sprite)
+
+    Prepare for battle!
+    """
+    }
 }

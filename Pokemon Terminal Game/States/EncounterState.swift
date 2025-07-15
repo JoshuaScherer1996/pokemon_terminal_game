@@ -5,9 +5,9 @@ struct EncounterState: GameState {
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         let encounterService = EncounterService()
         
-        let enemyPokemon = encounterService.getRandomUncaughtPokemon(using: context.pokedex)
+        let enemyPokemon = encounterService.getRandomUncaughtPokemon(using: context.pokedex) ?? PokeFactory.allPokemon()[0] // Quick and dirty dummy data as a fall back for now
         
-        
+        io.print(Messages.wildEncounterMessage(for: enemyPokemon))
         
         // Display the battle menu
         io.print(Messages.battleMenu)
