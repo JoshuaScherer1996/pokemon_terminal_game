@@ -19,13 +19,7 @@ struct PlayMenuState: GameState {
 
         switch choice {
         case "1":
-            io.print(
-                    """
-                    
-                    Wild encounter coming soon...
-                    """
-            )  // Placeholder
-            return .stay
+            return .push(EncounterState())
 
         case "2":
             return .push(ChangePokemonState())

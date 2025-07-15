@@ -49,6 +49,18 @@ enum Messages {
        4. Return to Main Menu       
        """
     
+    /// Battle menu options shown during the encounter state.
+    static let battleMenu = """
+       
+       ----------------------------------
+                  BATTLE MENU
+       ----------------------------------
+       1. Attack 
+       2. Catch 
+       3. Change active Pokémon
+       4. Flee     
+       """
+    
     /// Message shown after completing the full Pokedex.
     static let fullDex = """
         
