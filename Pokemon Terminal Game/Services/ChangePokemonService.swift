@@ -12,7 +12,7 @@ final class ChangePokemonService {
     @discardableResult
     func changePokemon(in context: GameContext, using io: TerminalIO) -> Bool {
         guard let current = context.currentPokemon else {
-            io.print("Error: No Pokémon currently selected.")
+            io.print(Messages.noPokemonSelcted)
             return false
         }
         
@@ -20,14 +20,14 @@ final class ChangePokemonService {
         let caughtIDs = context.pokedex.caughtIDs
         let allPokemon = context.pokedex.showEntries()
         
-        io.print("\nCurrently you have \(current.name) by your side!\n")
+        io.print(Messages.currentPokemon(current.name))
         io.print(Messages.titleCaughtPokemon)
         
         // Print list of caught Pokemon
         for pokemon in allPokemon where caughtIDs.contains(pokemon.id) {
             let idString = String(format: "%03d", pokemon.id)
             let marker = (pokemon.id == currentID) ? "[CURRENT] -> " : ""
-            io.print("\(marker)ID: \(idString), Name: \(pokemon.name), Type: \(pokemon.type)")
+            io.print(Messages.createEntry(marker: marker, id: idString, name: pokemon.name, type: pokemon.type))
         }
         
         io.print(Messages.changePokemonInput)
@@ -52,7 +52,7 @@ final class ChangePokemonService {
             }
             
             context.currentPokemon = selected
-            io.print("\nSwitched to \(selected.name)!")
+            io.print(Messages.switchedTo(selected.name))
             io.print(selected.sprite)
             return true
         }

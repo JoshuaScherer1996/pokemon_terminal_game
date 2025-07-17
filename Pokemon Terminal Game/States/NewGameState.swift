@@ -46,7 +46,7 @@ struct NewGameState: GameState {
         context.currentPokemon = starter
         context.pokedex.gotCaught(starter)
         
-        io.print("\nYou chose \(starter.name)! A great choice!\n")
+        io.print(Messages.chosenStarter(starter.name))
 
         return .push(PlayMenuState())
     }

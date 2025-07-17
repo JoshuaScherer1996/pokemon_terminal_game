@@ -28,12 +28,7 @@ struct PlayMenuState: GameState {
             return .push(PokedexState())
 
         case "4":
-            io.print(
-                """
-
-                Returning to Main Menu...
-                """
-            )
+            io.print(Messages.backToMainMenu)
             return .push(MainMenuState())
 
         default:

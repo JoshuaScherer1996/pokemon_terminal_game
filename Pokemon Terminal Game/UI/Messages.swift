@@ -123,15 +123,15 @@ enum Messages {
         ***********************************************
     
         Pokémon Terminal Game – Portfolio Showcase
-
+    
         Developed by Joshua Scherer
         Built entirely in Swift as a CLI game
-
+    
         Inspired by the original Pokémon games
         by Nintendo, Game Freak, and Creatures Inc.
-
+    
         Special thanks to the creators of ASCII Pokémon art
-
+    
         And last but not least: thank you, the player.  
         A game only comes to life through its players,  
         and the fact that you chose to start this journey  
@@ -141,7 +141,7 @@ enum Messages {
         and portfolio purposes only.
         All rights to Pokémon belong to their original creators.
         No copyright infringement intended.
-
+    
         ***********************************************
         **         Thanks for playing! ❤️            **
         ***********************************************
@@ -150,7 +150,7 @@ enum Messages {
     
     /// Informartion to the player that they are now exiting the game
     static let exit = "\nExiting the Game. See ya around!\n"
-
+    
     /// Title shown at the start of the pokedex state
     static let currentPokedex = "\nThis is your current Pokedex:\n"
     
@@ -165,13 +165,22 @@ enum Messages {
         
         """
     
+    /// Informartion to the player that they are now navigating back to the main menu
+    static let backToMainMenu = """
+                
+        Returning to Main Menu...
+        """
+    
+    /// Information for the player that they haven't selected a pokemon
+    static let noPokemonSelcted = "Error: No Pokémon currently selected."
+    
     /// Info for the player if they made no changes and decided to go back to the play menu
     static let pokemonNotChanged = "\nNo changes were made. Returning to play menu.\n"
     
     /// Information for the player about an invalid ID input
     static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"
     
-    /// Information
+    /// Information that the player alredy has the selected pokemon with them
     static let alreadySelected = "\nYou already have this Pokémon with you. Please choose another one or press 'n' to cancel."
     
     static func wildEncounterMessage(for pokemon: Pokemon) -> String {
@@ -183,8 +192,24 @@ enum Messages {
     A wild \(pokemon.name) appeared!
     
     \(pokemon.sprite)
-
+    
     Prepare for battle!
     """
+    }
+    
+    static func currentPokemon(_ name: String) -> String {
+        return "\nCurrently you have \(name) by your side!\n"
+    }
+    
+    static func createEntry(marker: String, id idString: String, name: String, type: String) -> String {
+        return "\(marker)ID: \(idString), Name: \(name), Type: \(type)"
+    }
+    
+    static func switchedTo(_ name: String) -> String {
+        return "\nSwitched to \(name)!"
+    }
+    
+    static func chosenStarter(_ name: String) -> String {
+        return "\nYou chose \(name)! A great choice!\n"
     }
 }
