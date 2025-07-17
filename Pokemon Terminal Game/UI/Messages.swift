@@ -151,10 +151,10 @@ enum Messages {
     /// Informartion to the player that they are now exiting the game
     static let exit = "\nExiting the Game. See ya around!\n"
     
-    /// Title shown at the start of the pokedex state
+    /// Title shown at the start of the Pokedex state
     static let currentPokedex = "\nThis is your current Pokedex:\n"
     
-    /// Title shown at the start of the change pokemon state
+    /// Title shown at the start of the change Pokemon state
     static let titleCaughtPokemon = "\nYour currently caught Pokémon are:\n"
     
     /// Message prompting the player to input the id / go back
@@ -171,7 +171,7 @@ enum Messages {
         Returning to Main Menu...
         """
     
-    /// Information for the player that they haven't selected a pokemon
+    /// Information for the player that they haven't selected a Pokemon
     static let noPokemonSelcted = "Error: No Pokémon currently selected."
     
     /// Info for the player if they made no changes and decided to go back to the play menu
@@ -180,9 +180,13 @@ enum Messages {
     /// Information for the player about an invalid ID input
     static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"
     
-    /// Information that the player alredy has the selected pokemon with them
+    /// Information that the player alredy has the selected Pokemon with them
     static let alreadySelected = "\nYou already have this Pokémon with you. Please choose another one or press 'n' to cancel."
     
+    /// Generates a message when a wild Pokemon appears during an encounter.
+    ///
+    /// - Parameter pokemon: The wild Pokemon that has appeared.
+    /// - Returns: A formatted encounter message including the Pokemon's name and ASCII sprite.
     static func wildEncounterMessage(for pokemon: Pokemon) -> String {
         return """
     
@@ -197,18 +201,38 @@ enum Messages {
     """
     }
     
+    /// Returns a message indicating which Pokemon the player currently has selected.
+    ///
+    /// - Parameter name: The name of the selected Pokemon.
+    /// - Returns: A formatted message showing the current companion Pokemon.
     static func currentPokemon(_ name: String) -> String {
         return "\nCurrently you have \(name) by your side!\n"
     }
     
+    /// Creates a formatted entry line for a Pokemon.
+    ///
+    /// - Parameters:
+    ///   - marker: A prefix symbol or string to mark the entry.
+    ///   - idString: The Pokemon's Pokedex ID.
+    ///   - name: The Pokemon's name.
+    ///   - type: The Pokemon's primary/secondary type(s).
+    /// - Returns: A formatted string representing the entry.
     static func createEntry(marker: String, id idString: String, name: String, type: String) -> String {
         return "\(marker)ID: \(idString), Name: \(name), Type: \(type)"
     }
     
+    /// Returns a message confirming a switch to a different Pokemon.
+    ///
+    /// - Parameter name: The name of the Pokemon that was switched to.
+    /// - Returns: A confirmation message.
     static func switchedTo(_ name: String) -> String {
         return "\nSwitched to \(name)!"
     }
     
+    /// Returns a message confirming the starter Pokemon selection.
+    ///
+    /// - Parameter name: The name of the chosen starter.
+    /// - Returns: A confirmation message.
     static func chosenStarter(_ name: String) -> String {
         return "\nYou chose \(name)! A great choice!\n"
     }
