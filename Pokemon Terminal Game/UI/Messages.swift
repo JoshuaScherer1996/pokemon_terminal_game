@@ -171,6 +171,12 @@ enum Messages {
         Returning to Main Menu...
         """
     
+    /// Informartion to the player that they are now navigating back to the play menu
+    static let backToPlayMenu = """
+                
+        Returning to Play Menu...
+        """
+    
     /// Information for the player that they haven't selected a Pokemon
     static let noPokemonSelcted = "Error: No Pokémon currently selected."
     
@@ -235,5 +241,34 @@ enum Messages {
     /// - Returns: A confirmation message.
     static func chosenStarter(_ name: String) -> String {
         return "\nYou chose \(name)! A great choice!\n"
+    }
+    
+    /// Returns a message describing the result of an attack during battle.
+    ///
+    /// - Parameters:
+    ///   - attacker: The attacking Pokemon.
+    ///   - target: The defending Pokemon that received damage.
+    ///   - damage: The amount of damage dealt.
+    /// - Returns: Formatted message showing the attack result and remaining HP of the target.
+    static func attackResultMessage(attacker: Pokemon, target: Pokemon, damage: Int) -> String {
+        return """
+    
+    \(attacker.name) attacked \(target.name) succesfully and dealt \(damage) damage!
+    
+    \(target.name) now has \(target.currentHP)/\(target.maxHP) HP remaining.
+    """
+    }
+    
+    /// Returns a message shown when the enemy Pokemon is defeated (fainted).
+    ///
+    /// - Parameter pokemon: The defeated enemy Pokemon.
+    /// - Returns: Formatted message informing the player of the faint and possible missed opportunity.
+    static func enemyDefeatedMessage(_ pokemon: Pokemon) -> String {
+        return """
+    
+    \(pokemon.name) fainted.
+
+    Next time be more careful if you want to catch it!
+    """
     }
 }

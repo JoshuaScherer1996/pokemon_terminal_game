@@ -3,9 +3,11 @@
 struct EncounterState: GameState {
     
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
-        let encounterService = EncounterService()
+        let battleService = BattleService()
         
-        let enemyPokemon = encounterService.getRandomUncaughtPokemon(using: context.pokedex) ?? PokeFactory.allPokemon()[0] // Quick and dirty dummy data as a fall back for now
+        var playerPokemon = context.currentPokemon ?? PokeFactory.allPokemon()[24] // Quick and dirty dummy data as a fall back for now
+        
+        var enemyPokemon = EncounterService().getRandomUncaughtPokemon(using: context.pokedex) ?? PokeFactory.allPokemon()[0] // Quick and dirty dummy data as a fall back for now
         
         io.print(Messages.wildEncounterMessage(for: enemyPokemon))
         
@@ -19,18 +21,17 @@ struct EncounterState: GameState {
                 options: ["1", "2", "3", "4"],
                 prompt: Messages.inputPromptNumbers
             )
-
+            
             switch choice {
             case "1":
-                //TODO: Implement attack
-                io.print(
-                        """
-                        
-                        Coming soon...
-                        """
-                )  // Placeholder
-                return .stay
-
+                if battleService.performAttack(from: &playerPokemon, to: &enemyPokemon) {
+                    io.print(Messages.enemyDefeatedMessage(enemyPokemon))
+                    io.print(Messages.playMenu)
+                    return .pop
+                }
+                
+                io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
+                
             case "2":
                 //TODO: Implement capture
                 io.print(
@@ -39,8 +40,7 @@ struct EncounterState: GameState {
                         Coming soon...
                         """
                 )  // Placeholder
-                return .stay
-
+                
             case "3":
                 //TODO: Implement switch pokemon
                 io.print(
@@ -49,8 +49,7 @@ struct EncounterState: GameState {
                         Coming soon...
                         """
                 )  // Placeholder
-                return .stay
-
+                
             case "4":
                 //TODO: Implement flee
                 io.print(
@@ -59,14 +58,16 @@ struct EncounterState: GameState {
                         Coming soon...
                         """
                 )  // Placeholder
-                return .stay
-
+                
             default:
                 // Unexpected input should not happen due to waitFor options
                 return .stay
             }
             
             //TODO: Enemy turn here
+            isRunning = true
         }
+        
+        return .pop
     }
 }
