@@ -240,7 +240,7 @@ enum Messages {
     /// - Parameter name: The name of the chosen starter.
     /// - Returns: A confirmation message.
     static func chosenStarter(_ name: String) -> String {
-        return "\nYou chose \(name)! A great choice!\n"
+        return "\nYou chose \(name)! A great choice!"
     }
     
     /// Returns a message describing the result of an attack during battle.
@@ -321,5 +321,67 @@ enum Messages {
             \(sprite)
             ------------------------------------------------------------------------------
             """
+    }
+    
+    /// Message displayed during a Pokemon capture attempt to create suspense and tension.
+    ///
+    /// - Parameter pokemon: The Pokemon being caught.
+    /// - Returns: A dramatic multi-line string showing the catching process.
+    static func catchingAttempt(_ pokemon: Pokemon) -> String {
+        return """
+        
+        \(AsciiUIArt.throwWindUp)
+        
+        \(AsciiUIArt.flyingBall)
+        
+        You throw a Pokéball at \(pokemon.name)!
+        
+        The Pokéball flies through the air... 
+        
+        It hits \(pokemon.name) and pulls it inside!
+        
+        \(AsciiUIArt.pokeballSuction)
+        
+        The ball shakes once... 
+        It shakes twice...
+        It shakes a third time... 
+        
+        Will it stay shut...?
+        """
+    }
+    
+    /// Message displayed when the Pokemon is successfully caught.
+    ///
+    /// - Parameter pokemon: The caught Pokemon.
+    /// - Returns: A celebratory message indicating a successful catch.
+    static func catchSuccess(_ pokemon: Pokemon) -> String {
+        return """
+        
+        *Click!* 
+        
+        Congratulations! You caught \(pokemon.name)! 
+        
+        \(pokemon.sprite)
+        
+        It has been added to your Pokédex.
+        
+        """
+    }
+    
+    /// Message displayed when the capture attempt fails and the Pokemon breaks free.
+    ///
+    /// - Parameter pokemon: The Pokemon that escaped.
+    /// - Returns: A dramatic message indicating failure.
+    static func catchFailed(_ pokemon: Pokemon) -> String {
+        return """
+        
+        Oh no! 
+        
+        \(pokemon.name) broke free!
+        
+        It looks at you with fiery determination...
+        Prepare for another move!
+        
+        """
     }
 }

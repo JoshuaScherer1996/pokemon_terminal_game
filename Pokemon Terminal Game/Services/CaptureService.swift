@@ -16,7 +16,7 @@ final class CaptureService {
     func tryCatch(pokemon: Pokemon) -> Bool {
         let baseChance = pokemon.catchChance()
         let hpFactor = Double(pokemon.maxHP - pokemon.currentHP) / Double(pokemon.maxHP)
-        let adjustedChance = max(0.2, min(1.0, baseChance + hpFactor)) // clamp between 20% and 100%
+        let adjustedChance = max(0.05, min(1.0, baseChance + hpFactor)) // clamp between 5% and 100%
         
         return Double.random(in: 0...1) <= adjustedChance
     }

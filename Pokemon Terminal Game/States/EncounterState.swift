@@ -25,7 +25,7 @@ struct EncounterState: GameState {
             )
             
             switch choice {
-            // Attack option
+                // Attack option
             case "1":
                 if battleService.performAttack(from: &playerPokemon, to: &enemyPokemon) {
                     io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
@@ -35,14 +35,22 @@ struct EncounterState: GameState {
                 
                 io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
                 
+            // Catch option
             case "2":
                 //TODO: Implement capture
-                io.print(
-                        """
-                        
-                        Coming soon...
-                        """
-                )  // Placeholder
+                let success = CaptureService().tryCatch(pokemon: enemyPokemon)
+                
+                io.print(Messages.catchingAttempt(enemyPokemon))
+                
+                if success {
+                    io.print(Messages.catchSuccess(enemyPokemon))
+                    battleService.restoreHP(&enemyPokemon)
+                    context.pokedex.gotCaught(enemyPokemon)
+                    return .pop
+                } else {
+                    io.print(Messages.catchFailed(enemyPokemon))
+                }
+                
                 
             case "3":
                 //TODO: Implement switch pokemon
@@ -61,6 +69,7 @@ struct EncounterState: GameState {
                         Coming soon...
                         """
                 )  // Placeholder
+                return .pop
                 
             default:
                 // Unexpected input should not happen due to waitFor options
