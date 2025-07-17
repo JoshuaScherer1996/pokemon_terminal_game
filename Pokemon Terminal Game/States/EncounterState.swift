@@ -11,9 +11,11 @@ struct EncounterState: GameState {
         
         io.print(Messages.wildEncounterMessage(for: enemyPokemon))
         
-        var isRunning: Bool = true
+        let isRunning: Bool = true
         
         while isRunning {
+            
+            io.print(Messages.playerTurn(with: playerPokemon.name, playerPokemon.sprite))
             
             // Display the battle menu
             io.print(Messages.battleMenu)
@@ -23,10 +25,11 @@ struct EncounterState: GameState {
             )
             
             switch choice {
+            // Attack option
             case "1":
                 if battleService.performAttack(from: &playerPokemon, to: &enemyPokemon) {
+                    io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
                     io.print(Messages.enemyDefeatedMessage(enemyPokemon))
-                    io.print(Messages.playMenu)
                     return .pop
                 }
                 
@@ -64,10 +67,18 @@ struct EncounterState: GameState {
                 return .stay
             }
             
-            //TODO: Enemy turn here
-            isRunning = true
+            // Start of the enemies turn
+            io.print(Messages.enemyTurn(of: enemyPokemon.name, enemyPokemon.sprite))
+            
+            if battleService.chanceAttackSucceeded(probability: 0.8) {
+                if battleService.performAttack(from: &enemyPokemon, to: &playerPokemon) {
+                    io.print(Messages.attackResultMessage(attacker: enemyPokemon, target: playerPokemon, damage: enemyPokemon.attack))
+                    io.print(Messages.playerPokemonFaintedMessage(playerPokemon))
+                    return .pop
+                }
+                
+                io.print(Messages.attackResultMessage(attacker: enemyPokemon, target: playerPokemon, damage: playerPokemon.attack))
+            }
         }
-        
-        return .pop
     }
 }

@@ -20,6 +20,14 @@ final class BattleService {
     func restoreHP(_ pokemon: inout Pokemon) {
         pokemon.currentHP = pokemon.maxHP
     }
+    
+    /// Determines whether the attack succeeds based on the given chance.
+    ///
+    /// - Parameter probability: A `Double` between 0.0 and 1.0 representing the success chance.
+    /// - Returns: `true` if the randomly generated value is below the given probability, otherwise `false`.
+    func chanceAttackSucceeded(probability: Double) -> Bool {
+        return Double.random(in: 0..<1) < probability
+    }
 
     /// Checks whether a given Pokemon has fainted (i.e. HP is zero or less).
     ///

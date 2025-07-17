@@ -267,8 +267,59 @@ enum Messages {
         return """
     
     \(pokemon.name) fainted.
-
+    
     Next time be more careful if you want to catch it!
     """
+    }
+    
+    /// Returns a message shown when the player's current Pokemon faints.
+    ///
+    /// - Parameter pokemon: The player's fainted Pokemon.
+    /// - Returns: Formatted message indicating that the Pokemon has fainted.
+    static func playerPokemonFaintedMessage(_ pokemon: Pokemon) -> String {
+        return """
+        
+        Oh no!
+        
+        Your \(pokemon.name) has fainted!
+        
+        Let's escape from the battle and heal \(pokemon.name).
+        """
+    }
+    
+    /// Returns a message indicating that the enemy Pokemon is about to take its turn.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the enemy Pokemon.
+    ///   - sprite: The ASCII art of the enemy Pokemon.
+    /// - Returns: Formatted message announcing the start of the enemy turn.
+    static func enemyTurn(of name: String, _ sprite: String) -> String {
+        return """
+            ------------------------------------------------------------------------------
+            Your turn is over! Get ready for \(name)'s turn!
+            
+            \(sprite)
+            
+            \(name) looks at you pacing back and forth.
+            ------------------------------------------------------------------------------
+            """
+    }
+    
+    /// Returns a message indicating that it's the player's turn, showing the current Pokemon.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the player's current Pokemon.
+    ///   - sprite: The ASCII art of the player's Pokemon.
+    /// - Returns: Formatted message announcing the start of the player's turn.
+    static func playerTurn(with name: String, _ sprite: String) -> String {
+        return """
+            ------------------------------------------------------------------------------
+            It's your turn!
+            
+            \(name) I choose you!
+            
+            \(sprite)
+            ------------------------------------------------------------------------------
+            """
     }
 }
