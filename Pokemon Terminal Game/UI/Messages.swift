@@ -265,6 +265,20 @@ enum Messages {
     """
     }
     
+    /// Message displayed when the enemy Pokemon misses its attack.
+    ///
+    /// - Parameter pokemon: The enemy Pokemon that attempted the attack.
+    /// - Returns: String indicating the missed attack.
+    static func enemyMissedAttack(_ pokemon: Pokemon) -> String {
+        return """
+        
+        \(pokemon.name) charges forward and attacks...
+
+        But it misses completely!
+        
+        """
+    }
+    
     /// Returns a message shown when the enemy Pokemon is defeated (fainted).
     ///
     /// - Parameter pokemon: The defeated enemy Pokemon.
@@ -336,11 +350,11 @@ enum Messages {
     static func catchingAttempt(_ pokemon: Pokemon) -> String {
         return """
         
-        \(AsciiUIArt.throwWindUp)
-        
-        \(AsciiUIArt.flyingBall)
-        
         You throw a Pokéball at \(pokemon.name)!
+        
+        \(AsciiUIArt.throwWindUp)
+                
+        \(AsciiUIArt.flyingBall)
         
         The Pokéball flies through the air... 
         
