@@ -161,7 +161,7 @@ enum Messages {
     static let changePokemonInput = """
         
         Enter the ID of the Pokémon you'd like to switch to.
-        Otherwise press 'n' to cancel and return to the play menu.
+        Otherwise press 'n' to cancel and return to the last menu.
         
         """
     
@@ -181,7 +181,7 @@ enum Messages {
     static let noPokemonSelcted = "Error: No Pokémon currently selected."
     
     /// Info for the player if they made no changes and decided to go back to the play menu
-    static let pokemonNotChanged = "\nNo changes were made. Returning to play menu.\n"
+    static let pokemonNotChanged = "\nNo changes were made. Returning to the last menu.\n"
     
     /// Information for the player about an invalid ID input
     static let invalidId = "Invalid choice. Please enter a valid ID or 'n' to cancel:"

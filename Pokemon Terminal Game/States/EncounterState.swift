@@ -25,7 +25,7 @@ struct EncounterState: GameState {
             )
             
             switch choice {
-                // Attack option
+                // Attack Pokemon
             case "1":
                 if battleService.performAttack(from: &playerPokemon, to: &enemyPokemon) {
                     io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
@@ -35,9 +35,8 @@ struct EncounterState: GameState {
                 
                 io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
                 
-            // Catch option
+            // Catch Pokemon
             case "2":
-                //TODO: Implement capture
                 let success = CaptureService().tryCatch(pokemon: enemyPokemon)
                 
                 io.print(Messages.catchingAttempt(enemyPokemon))
@@ -51,15 +50,15 @@ struct EncounterState: GameState {
                     io.print(Messages.catchFailed(enemyPokemon))
                 }
                 
-                
+            // Switch Pokemon
             case "3":
-                //TODO: Implement switch pokemon
-                io.print(
-                        """
-                        
-                        Coming soon...
-                        """
-                )  // Placeholder
+                let didChange: Bool = ChangePokemonService().changePokemon(in: context, using: io)
+                
+                if didChange {
+                    playerPokemon = context.currentPokemon!
+                } else {
+                    continue
+                }
                 
             case "4":
                 //TODO: Implement flee
