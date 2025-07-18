@@ -124,13 +124,13 @@ enum Messages {
     
         Pokémon Terminal Game – Portfolio Showcase
     
-        Developed by Joshua Scherer
-        Built entirely in Swift as a CLI game
+        Developed by Joshua Scherer.
+        Built entirely in Swift as a CLI game.
     
         Inspired by the original Pokémon games
         by Nintendo, Game Freak, and Creatures Inc.
     
-        Special thanks to the creators of ASCII Pokémon art
+        Special thanks to the creators of ASCII Pokémon art.
     
         And last but not least: thank you, the player.  
         A game only comes to life through its players,  
@@ -194,6 +194,19 @@ enum Messages {
     
     /// Information that the player alredy has the selected Pokemon with them
     static let alreadySelected = "\nYou already have this Pokémon with you. Please choose another one or press 'n' to cancel."
+    
+    /// Victroy Message shown to the player after completing the Pokedex.
+    static let gameOverInfo: String = """
+            -----------------------------------------------------
+            Congratulations, Trainer! 
+
+            You did it—you’ve caught all 151 Pokémon!
+            You are the very best like no one ever was!
+            The Pokédex is now 100% complete.
+            
+            Let's take a final look at your collection.
+            -----------------------------------------------------
+            """
     
     /// Generates a message when a wild Pokemon appears during an encounter.
     ///
@@ -333,6 +346,7 @@ enum Messages {
     /// - Returns: Formatted message announcing the start of the player's turn.
     static func playerTurn(with name: String, _ sprite: String) -> String {
         return """
+            
             ------------------------------------------------------------------------------
             It's your turn!
             

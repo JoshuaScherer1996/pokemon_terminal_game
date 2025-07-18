@@ -10,6 +10,11 @@ struct PlayMenuState: GameState {
     ///   - io: The terminal input/output interface.
     /// - Returns: A state transition depending on the user's menu choice.
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
+        // Check if all 151 Pokemon are caught
+        if context.pokedex.caughtIDs.count == PokeFactory.allPokemon().count {
+            return .push(GameOverState())
+        }
+        
         // Display the play menu
         io.print(Messages.playMenu)
         let choice = io.waitFor(
