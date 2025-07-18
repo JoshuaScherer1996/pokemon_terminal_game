@@ -165,6 +165,12 @@ enum Messages {
         
         """
     
+    /// Information for the user that they managed to escape
+    static let escapeSuccess = """
+    
+    You managed to escape safely!
+    """
+    
     /// Informartion to the player that they are now navigating back to the main menu
     static let backToMainMenu = """
                 
@@ -382,6 +388,31 @@ enum Messages {
         It looks at you with fiery determination...
         Prepare for another move!
         
+        """
+    }
+    
+    /// Message displayed when the player attempts to flee from battle.
+    ///
+    /// - Parameter pokemon: The player's currently selected Pokemon.
+    /// - Returns: String describing the player's attempt to escape.
+    static func fleeing(with pokemon: Pokemon) -> String {
+        return """
+        
+        This fight seems to be too much for you and \(pokemon.name).
+            
+        You quickly turn around and try to dash out of the tall grass...
+        """
+    }
+    
+    /// Message displayed when the player fails to escape from a wild Pokemon encounter.
+    ///
+    /// - Parameter pokemon: The wild Pokemon blocking the escape.
+    /// - Returns: A string indicating the failed escape attempt.
+    static func escapeFailure(_ pokemon: Pokemon) -> String {
+        return """
+        
+        \(pokemon.name) blocks your path!
+        No escape this time—get ready to fight!
         """
     }
 }

@@ -60,15 +60,18 @@ struct EncounterState: GameState {
                     continue
                 }
                 
+            // Escape the battle
             case "4":
-                //TODO: Implement flee
-                io.print(
-                        """
-                        
-                        Coming soon...
-                        """
-                )  // Placeholder
-                return .pop
+                let didEscape: Bool = EscapeService().tryEscape()
+                
+                io.print(Messages.fleeing(with: playerPokemon))
+                
+                if didEscape {
+                    io.print(Messages.escapeSuccess)
+                    return .pop
+                } else {
+                    io.print(Messages.escapeFailure(enemyPokemon))
+                }
                 
             default:
                 // Unexpected input should not happen due to waitFor options
