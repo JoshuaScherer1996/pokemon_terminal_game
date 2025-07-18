@@ -1,7 +1,19 @@
 // MARK: Encoutner State
 
+/// The state representing a wild Pokemon encounter.
+///
+/// This state handles the entire turn-based flow of a wild battle, including player choices such as attacking, catching, switching Pokemon, or escaping.
+/// It concludes when either the enemy Pokemon faints, is caught, or the player successfully escapes.
+/// If the player's Pokemon faints, the battle ends and returns to the previous game state.
 struct EncounterState: GameState {
     
+    /// Executes the encounter logic in a turn-based loop until a valid state transition occurs.
+    ///
+    /// - Parameters:
+    ///   - context: The current shared `GameContext`, containing player state and game data.
+    ///   - io: The `TerminalIO` interface for input/output with the player.
+    ///
+    /// - Returns: A `StateTransition` that determines the next game state action (.pop when encounter ends).
     func run(context: GameContext, io: TerminalIO) -> StateTransition {
         let battleService = BattleService()
         
@@ -35,7 +47,7 @@ struct EncounterState: GameState {
                 
                 io.print(Messages.attackResultMessage(attacker: playerPokemon, target: enemyPokemon, damage: playerPokemon.attack))
                 
-            // Catch Pokemon
+                // Catch Pokemon
             case "2":
                 let success = CaptureService().tryCatch(pokemon: enemyPokemon)
                 
@@ -50,7 +62,7 @@ struct EncounterState: GameState {
                     io.print(Messages.catchFailed(enemyPokemon))
                 }
                 
-            // Switch Pokemon
+                // Switch Pokemon
             case "3":
                 let didChange: Bool = ChangePokemonService().changePokemon(in: context, using: io)
                 
@@ -60,7 +72,7 @@ struct EncounterState: GameState {
                     continue
                 }
                 
-            // Escape the battle
+                // Escape the battle
             case "4":
                 let didEscape: Bool = EscapeService().tryEscape()
                 
@@ -74,11 +86,11 @@ struct EncounterState: GameState {
                 }
                 
             default:
-                // Unexpected input should not happen due to waitFor options
+                // Defensive fallback (should not occur due to validated input)
                 return .stay
             }
             
-            // Start of the enemies turn
+            // Enemy turn
             io.print(Messages.enemyTurn(of: enemyPokemon.name, enemyPokemon.sprite))
             
             if battleService.chanceAttackSucceeded(probability: 0.8) {
