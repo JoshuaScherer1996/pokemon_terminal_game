@@ -100,7 +100,9 @@ Further highlights:
 A little look behind the scenes never hurts. Even though I didn't fully stick with this chart and made some adjustments here and there this is the flowchart I created during the planning phase of this project.
 
 ### 1. Main Menu & Game Start
-![Start Menu Flowchart](Assets/Screenshot_1.png)
+<p align="center">
+  <img src="Assets/Screenshot_1.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 ### 2. Ingame Menu & Actions
 ![Ingame Flowchart](Assets/Screenshot_2.png)
