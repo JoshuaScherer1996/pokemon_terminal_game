@@ -33,6 +33,8 @@ struct PlayMenuState: GameState {
             return .push(PokedexState())
 
         case "4":
+            SaveManager.save(game: context.toSaveGame())
+            io.print(Messages.saveSuccess)
             io.print(Messages.backToMainMenu)
             return .push(MainMenuState())
 

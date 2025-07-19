@@ -15,18 +15,29 @@ struct MainMenuState: GameState {
             options: ["1","2","3","4"],
             prompt: Messages.inputPromptNumbers
         )
-
+        
         switch choice {
+        // New Game Option
         case "1":
+            SaveManager.clear()
+            context.reset()
             return .push(NewGameState())
+        // Continue Option
         case "2":
-            io.print(Messages.noSave)        // Placeholder for save/load function
-            io.waitFor("n", prompt: Messages.inputPromptNext)
-            return .stay
+            if let save = SaveManager.load() {
+                io.print(Messages.loadSuccess)
+                context.apply(save: save)
+                return .push(PlayMenuState())
+            } else {
+                io.print(Messages.noSave)
+                return .stay
+            }
+        // Credits Option
         case "3":
             io.print(Messages.credits)
             io.waitFor("n", prompt: Messages.inputPromptNext)
             return .stay
+        // Exit Option
         case "4":
             io.print(Messages.exit)
             return .end

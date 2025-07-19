@@ -12,12 +12,21 @@ final class PokedexManager {
     private(set) var caughtIDs: Set<Int> = []
     
     /// Initializes a new Pokedex manager instance with a starter Pokemon already marked as caught.
+    /// Used when starting the game.
     ///
     /// - Parameter starter: The initially chosen starter Pokemon.
     init(starter: Pokemon?) {
         if let starter = starter {
                 caughtIDs.insert(Int(starter.id) ?? 0)
             }
+    }
+    
+    /// Initializes the Pokedex manager with a set of previously caught Pokémon IDs.
+    /// Used when loading a saved game.
+    ///
+    /// - Parameter caughtIDs: An array of integer IDs for Pokémon that have already been caught.
+    init(from caughtIDs: [Int]) {
+        self.caughtIDs = Set(caughtIDs)
     }
     
     /// Marks a given Pokemon as caught and adds its ID to the set.

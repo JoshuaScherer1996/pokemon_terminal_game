@@ -35,6 +35,7 @@
 				main.swift,
 				UI/Messages.swift,
 				UI/StdTerminalIO.swift,
+				"Utilities/Extensions/GameContext+Save.swift",
 				"Utilities/Extensions/Pokemon+Battle.swift",
 				"Utilities/Extensions/Pokemon+Capture.swift",
 				Utilities/Extensions/TerminalIOHelper.swift,
@@ -43,6 +44,7 @@
 				Utilities/Protocols/Capture.swift,
 				Utilities/Protocols/GameState.swift,
 				Utilities/Protocols/TerminalIO.swift,
+				Utilities/SaveManager.swift,
 			);
 			target = 27DA390B2DFDB50600BBA99B /* PokemonTerminalGameTests */;
 		};

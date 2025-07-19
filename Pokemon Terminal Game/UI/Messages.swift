@@ -166,22 +166,18 @@ enum Messages {
         """
     
     /// Information for the user that they managed to escape
-    static let escapeSuccess = """
+    static let escapeSuccess = "\nYou managed to escape safely!"
     
-    You managed to escape safely!
-    """
+    /// Information for the player that their game was saved.
+    static let saveSuccess = "\nSaved your game succesfully!"
+    
+    static let loadSuccess = "\nYour last game is loading..."
     
     /// Informartion to the player that they are now navigating back to the main menu
-    static let backToMainMenu = """
-                
-        Returning to Main Menu...
-        """
+    static let backToMainMenu = "\nReturning to Main Menu..."
     
     /// Informartion to the player that they are now navigating back to the play menu
-    static let backToPlayMenu = """
-                
-        Returning to Play Menu...
-        """
+    static let backToPlayMenu = "\nReturning to Play Menu..."
     
     /// Information for the player that they haven't selected a Pokemon
     static let noPokemonSelcted = "Error: No Pokémon currently selected."
