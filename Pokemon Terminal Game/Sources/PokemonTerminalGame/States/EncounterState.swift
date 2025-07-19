@@ -101,9 +101,9 @@ struct EncounterState: GameState {
                 }
                 
                 io.print(Messages.attackResultMessage(attacker: enemyPokemon, target: playerPokemon, damage: playerPokemon.attack))
+            } else {
+                io.print(Messages.enemyMissedAttack(enemyPokemon))
             }
-            
-            io.print(Messages.enemyMissedAttack(enemyPokemon))
         }
     }
 }
