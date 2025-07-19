@@ -10,10 +10,9 @@ final class GameCoordinator {
     /// Initializes the game with a starter Pokemon and optional I/O handler.
     ///
     /// - Parameters:
-    ///   - starter: The initial Pokemon to begin the game with.
     ///   - io: Terminal I/O interface (defaults to `StdTerminalIO`).
-    init(starter: Pokemon, io: TerminalIO = StdTerminalIO()) {
-        self.context = GameContext(starter: starter)
+    init(io: TerminalIO = StdTerminalIO()) {
+        self.context = GameContext()
         self.io      = io
         self.stack   = [WelcomeState()] // Entry point
     }

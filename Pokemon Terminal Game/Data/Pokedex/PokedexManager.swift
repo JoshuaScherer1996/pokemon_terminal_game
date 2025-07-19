@@ -14,8 +14,10 @@ final class PokedexManager {
     /// Initializes a new Pokedex manager instance with a starter Pokemon already marked as caught.
     ///
     /// - Parameter starter: The initially chosen starter Pokemon.
-    init(starter: Pokemon) {
-        caughtIDs.insert(Int(starter.id) ?? 0)
+    init(starter: Pokemon?) {
+        if let starter = starter {
+                caughtIDs.insert(Int(starter.id) ?? 0)
+            }
     }
     
     /// Marks a given Pokemon as caught and adds its ID to the set.
