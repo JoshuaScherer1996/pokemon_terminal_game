@@ -24,7 +24,8 @@ In Pokémon Terminal Game, players embark on a classic journey to catch all 151 
 
 ### How it works
 
-1. Choose Your Starter: Begin your journey by picking one of four iconic starters: Bulbasaur, Charmander, Squirtle, or Pikachu. Each comes with unique stats and ASCII art. <p align="center">
+1. Choose Your Starter: Begin your journey by picking one of four iconic starters: Bulbasaur, Charmander, Squirtle, or Pikachu. Each comes with unique stats and ASCII art. 
+<p align="center">
   <img src="Assets/starter.png" width="500" height="auto" alt="Main Menu">
 </p>
 
