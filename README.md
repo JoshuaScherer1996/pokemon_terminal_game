@@ -24,19 +24,34 @@ In Pokémon Terminal Game, players embark on a classic journey to catch all 151 
 
 ### How it works
 
-1. Choose Your Starter: Begin your journey by picking one of four iconic starters: Bulbasaur, Charmander, Squirtle, or Pikachu. Each comes with unique stats and ASCII art. ![Starter Selection Screenshot](Assets/starter.png)
+1. Choose Your Starter: Begin your journey by picking one of four iconic starters: Bulbasaur, Charmander, Squirtle, or Pikachu. Each comes with unique stats and ASCII art. <p align="center">
+  <img src="Assets/starter.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 2. Explore via Encounters
-Wild Pokémon appear randomly as you venture into tall grass. These encounters are driven by a randomness engine with checks for previously caught Pokémon, ensuring a full Pokédex challenge. ![Encounter](Assets/encounter.png)
+Wild Pokémon appear randomly as you venture into tall grass. These encounters are driven by a randomness engine with checks for previously caught Pokémon, ensuring a full Pokédex challenge.
+<p align="center">
+  <img src="Assets/encounter.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 3. Turn-Based Battle System
-Engage in simple turn-based combat using a single attack move. Deal damage, track HP, and knock out wild Pokémon—or get knocked out yourself. ![Turn Based System](Assets/turn.png)
+Engage in simple turn-based combat using a single attack move. Deal damage, track HP, and knock out wild Pokémon—or get knocked out yourself.
+<p align="center">
+  <img src="Assets/turn.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 4. Catch 'em All
-Use Poké Balls to try and catch wild Pokémon. Each creature has a predefined catch difficulty, and success depends on chance—adding tension and replayability. ![Try Catching](Assets/catch.png)
+Use Poké Balls to try and catch wild Pokémon. Each creature has a predefined catch difficulty, and success depends on chance—adding tension and replayability.
+<p align="center">
+  <img src="Assets/catch.png" width="500" height="auto" alt="Main Menu">
+</p>
+
 
 5. Switch Your Pokémon
-Swap your current active Pokémon with any you've previously caught to adjust your battle strategy. ![Switching Pokemon](Assets/change_pokemon.png)
+Swap your current active Pokémon with any you've previously caught to adjust your battle strategy.
+<p align="center">
+  <img src="Assets/change_pokemon.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 6. Try to Flee
 Not every encounter is worth the risk. Fleeing is possible, but not guaranteed.
@@ -105,10 +120,15 @@ A little look behind the scenes never hurts. Even though I didn't fully stick wi
 </p>
 
 ### 2. Ingame Menu & Actions
-![Ingame Flowchart](Assets/Screenshot_2.png)
+<p align="center">
+  <img src="Assets/Screenshot_2.png" width="500" height="auto" alt="Main Menu">
+</p>
 
 ### 3. Encounter & Battle Logic
-![Battle Flowchart](Assets/Screenshot_3.png)
+<p align="center">
+  <img src="Assets/Screenshot_3.png" width="500" height="auto" alt="Main Menu">
+</p>
+
 
 ---
 
