@@ -10,7 +10,10 @@ struct SaveManager {
     
     /// URL to the save file in the user's home directory.
     private static var saveURL: URL {
-        FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(fileName)
+        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                fatalError("Could not locate user's document directory.")
+            }
+            return documentsURL.appendingPathComponent(fileName)
     }
     
     /// Saves the current game state to disk.
