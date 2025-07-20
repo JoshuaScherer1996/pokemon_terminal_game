@@ -69,7 +69,7 @@ Once all 151 Pokémon are caught, the game transitions to a Game Over state, sho
 
 ### Requirements
 
-- Swift 5.9 or higher
+- Swift 6.1 or higher
 
 - Git installed
 
@@ -79,7 +79,7 @@ Once all 151 Pokémon are caught, the game transitions to a Game Over state, sho
 
 ### Installation
 
-1. Clone the Repository <pre> ```git clone https://github.com/JoshuaScherer1996/pokemon_terminal_game.git``` </pre> <pre> ```cd pokemon_terminal_game ``` </pre>
+1. Clone the Repository <pre> ```git clone https://github.com/JoshuaScherer1996/pokemon_terminal_game.git``` </pre> <pre> ```cd pokemon_terminal_game/"Pokemon Terminal Game" ``` </pre>
 
 2. Build the Project <pre> ```swift build -c release``` </pre>
 
