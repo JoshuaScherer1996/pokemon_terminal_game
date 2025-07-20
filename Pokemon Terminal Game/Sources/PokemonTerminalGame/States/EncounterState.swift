@@ -74,7 +74,7 @@ struct EncounterState: GameState {
                 
                 // Escape the battle
             case "4":
-                let didEscape: Bool = EscapeService().tryEscape()
+                let didEscape: Bool = EscapeService().attemptEscape()
                 
                 io.print(Messages.fleeing(with: playerPokemon))
                 

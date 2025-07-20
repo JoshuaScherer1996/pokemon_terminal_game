@@ -1,7 +1,7 @@
-// MARK: Unit Tests for capturing
-
 import XCTest
 @testable import PokemonTerminalGame
+
+// MARK: Unit Tests for capturing
 
 final class CaptureTests: XCTestCase {
     

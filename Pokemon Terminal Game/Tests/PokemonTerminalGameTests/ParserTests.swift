@@ -1,7 +1,7 @@
-// MARK: Unit Tests for the PokeParser
-
 import XCTest
 @testable import PokemonTerminalGame
+
+// MARK: Unit Tests for the PokeParser
 
 final class ParserTests: XCTestCase {
     

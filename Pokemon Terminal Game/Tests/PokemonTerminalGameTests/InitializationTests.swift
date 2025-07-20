@@ -1,7 +1,7 @@
-// MARK: Unit Tests for initialization
-
 import XCTest
 @testable import PokemonTerminalGame
+
+// MARK: Unit Tests for initialization
 
 final class InitializationTests: XCTestCase {
     

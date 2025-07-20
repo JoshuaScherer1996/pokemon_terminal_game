@@ -1,7 +1,7 @@
-// MARK: Unit Tests for battling
-
 import XCTest
 @testable import PokemonTerminalGame
+
+// MARK: Unit Tests for battling
 
 final class BattBattleTests: XCTestCase {
     

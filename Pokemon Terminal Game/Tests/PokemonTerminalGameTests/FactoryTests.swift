@@ -1,7 +1,7 @@
-// MARK: Unit Tests for the PokeFactory
-
 import XCTest
 @testable import PokemonTerminalGame
+
+// MARK: Unit Tests for the PokeFactory
 
 final class PokeFactoryTests: XCTestCase {
     
