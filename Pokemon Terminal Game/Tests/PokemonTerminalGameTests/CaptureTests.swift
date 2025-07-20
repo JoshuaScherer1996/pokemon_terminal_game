@@ -1,7 +1,7 @@
 // MARK: Unit Tests for capturing
 
 import XCTest
-@testable import Pokemon_Terminal_Game
+@testable import PokemonTerminalGame
 
 final class CaptureTests: XCTestCase {
     
@@ -15,7 +15,8 @@ final class CaptureTests: XCTestCase {
                 type: [.psychic],
                 maxHP: 100,
                 attack: 50,
-                catchDifficulty: 255 // max value, should give minimum chance
+                catchDifficulty: 255, // max value, should give minimum chance
+                sprite: ""
             )
         
         // Act: Calculate the catch chance.
@@ -35,7 +36,9 @@ final class CaptureTests: XCTestCase {
             type: [.electric],
             maxHP: 10,
             attack: 15,
-            catchDifficulty: 0) // min value, should give maximum chance
+            catchDifficulty: 0,
+            sprite: ""
+        ) // min value, should give maximum chance
         
         // Act: Calculate the catch chance.
         let chanc = easyToCatchPokemon.catchChance()
@@ -55,7 +58,8 @@ final class CaptureTests: XCTestCase {
             type: [.normal],
             maxHP: 100,
             attack: 50,
-            catchDifficulty: 127 // midpoint of 0–255
+            catchDifficulty: 127, // midpoint of 0–255
+            sprite: ""
         )
 
         // Act: Calculate the catch chance.
@@ -77,7 +81,8 @@ final class CaptureTests: XCTestCase {
             type: [.ghost],
             maxHP: 100,
             attack: 50,
-            catchDifficulty: 999 // way above the 255 cap
+            catchDifficulty: 999, // way above the 255 cap
+            sprite: ""
         )
 
         // Act: Calculate the catch chance.
@@ -98,7 +103,8 @@ final class CaptureTests: XCTestCase {
             type: [.grass],
             maxHP: 100,
             attack: 50,
-            catchDifficulty: -999 // way below the 0 cap
+            catchDifficulty: -999, // way below the 0 cap
+            sprite: ""
         )
         
         // Act: Calculate the catch chance.

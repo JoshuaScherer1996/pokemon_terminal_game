@@ -18,6 +18,7 @@ let package = Package(
         ),
         .testTarget(
             name: "PokemonTerminalGameTests",
+            dependencies: ["PokemonTerminalGame"],
             path: "Tests/PokemonTerminalGameTests"
         ),
     ]

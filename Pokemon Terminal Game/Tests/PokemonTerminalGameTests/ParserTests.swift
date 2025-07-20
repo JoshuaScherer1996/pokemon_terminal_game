@@ -1,7 +1,7 @@
 // MARK: Unit Tests for the PokeParser
 
 import XCTest
-@testable import Pokemon_Terminal_Game
+@testable import PokemonTerminalGame
 
 final class ParserTests: XCTestCase {
     
@@ -9,7 +9,7 @@ final class ParserTests: XCTestCase {
     func testSingleTypeIsParsedCorrectly() {
         
         // Arrange: Create custom test data with a single-type Pokemon
-        let testNumbers = ["001"]
+        _ = ["001"]
         let testNames = ["Firemon"]
         let testTypes = ["fire"]
         let testHP = [50]
@@ -18,12 +18,11 @@ final class ParserTests: XCTestCase {
         
         // Act: Use factory with custom input
         let result = PokeFactory.allPokemon(
-            numbers: testNumbers,
             names: testNames,
             types: testTypes,
-            hp: testHP,
-            attack: testAttack,
-            difficulty: testDifficulty
+            hps: testHP,
+            attacks: testAttack,
+            difficulties: testDifficulty
         )
         
         // Assert: The single type should be parsed correctly
@@ -35,7 +34,7 @@ final class ParserTests: XCTestCase {
     func testDualTypeIsParsedCorrectly() {
         
         // Arrange: Create custom test data with a dual-type Pokemon
-        let testNumbers = ["006"]
+        _ = ["006"]
         let testNames = ["Flarewing"]
         let testTypes = ["fire/flying"]
         let testHP = [78]
@@ -44,12 +43,11 @@ final class ParserTests: XCTestCase {
         
         // Act: Use factory with custom input
         let result = PokeFactory.allPokemon(
-            numbers: testNumbers,
             names: testNames,
             types: testTypes,
-            hp: testHP,
-            attack: testAttack,
-            difficulty: testDifficulty
+            hps: testHP,
+            attacks: testAttack,
+            difficulties: testDifficulty
         )
         
         // Assert: The dual types should be parsed correctly

@@ -1,7 +1,7 @@
 // MARK: Unit Tests for initialization
 
 import XCTest
-@testable import Pokemon_Terminal_Game
+@testable import PokemonTerminalGame
 
 final class InitializationTests: XCTestCase {
     
@@ -15,7 +15,8 @@ final class InitializationTests: XCTestCase {
             type: [.fire],
             maxHP: 77,
             attack: 88,
-            catchDifficulty: 50
+            catchDifficulty: 50,
+            sprite: ""
         )
 
         // Act: Read currentHP
@@ -29,8 +30,8 @@ final class InitializationTests: XCTestCase {
     func testPokemonInitializationWithCorrectValues() {
         
         // Arrange: Create two Pokemon with exactly the same properties
-        let expected = Pokemon(id: "042", name: "Zubat", type: [.poison, .flying], maxHP: 40, attack: 45, catchDifficulty: 120)
-        let actual = Pokemon(id: "042", name: "Zubat", type: [.poison, .flying], maxHP: 40, attack: 45, catchDifficulty: 120)
+        let expected = Pokemon(id: "042", name: "Zubat", type: [.poison, .flying], maxHP: 40, attack: 45, catchDifficulty: 120, sprite: "")
+        let actual = Pokemon(id: "042", name: "Zubat", type: [.poison, .flying], maxHP: 40, attack: 45, catchDifficulty: 120, sprite: "")
 
         // Act & Assert: The two instances should be equal if all fields were properly assigned
         XCTAssertEqual(actual, expected, "Two Pokemon with identical values should be equal.")
@@ -47,7 +48,8 @@ final class InitializationTests: XCTestCase {
             type: types,
             maxHP: 90,
             attack: 70,
-            catchDifficulty: 90
+            catchDifficulty: 90,
+            sprite: ""
         )
         
         // Act: Access the stored type property

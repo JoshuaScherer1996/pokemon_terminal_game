@@ -1,7 +1,7 @@
 // MARK: Unit Tests for battling
 
 import XCTest
-@testable import Pokemon_Terminal_Game
+@testable import PokemonTerminalGame
 
 final class BattBattleTests: XCTestCase {
     
@@ -15,7 +15,8 @@ final class BattBattleTests: XCTestCase {
             type: [.normal],
             maxHP: 100,
             attack: 30,
-            catchDifficulty: 100
+            catchDifficulty: 100,
+            sprite: ""
         )
 
         // Act: Inflict 40 damage.
@@ -35,7 +36,8 @@ final class BattBattleTests: XCTestCase {
             type: [.normal],
             maxHP: 100,
             attack: 30,
-            catchDifficulty: 100
+            catchDifficulty: 100,
+            sprite: ""
         )
         
         // Act: Inflict 100 damage.
@@ -55,7 +57,8 @@ final class BattBattleTests: XCTestCase {
             type: [.ghost],
             maxHP: 50,
             attack: 20,
-            catchDifficulty: 100
+            catchDifficulty: 100,
+            sprite: ""
         )
 
         // Override currentHP to simulate fainted state
@@ -76,7 +79,8 @@ final class BattBattleTests: XCTestCase {
             type: [.bug],
             maxHP: 50,
             attack: 20,
-            catchDifficulty: 100
+            catchDifficulty: 100,
+            sprite: ""
         )
 
         // Override currentHP to simulate fainted state
@@ -97,7 +101,8 @@ final class BattBattleTests: XCTestCase {
             type: [.rock],
             maxHP: 60,
             attack: 25,
-            catchDifficulty: 80
+            catchDifficulty: 80,
+            sprite: ""
         )
 
         // Act: Inflict partial damage

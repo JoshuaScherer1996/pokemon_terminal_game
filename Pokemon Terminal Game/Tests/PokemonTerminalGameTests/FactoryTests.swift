@@ -1,7 +1,7 @@
 // MARK: Unit Tests for the PokeFactory
 
 import XCTest
-@testable import Pokemon_Terminal_Game
+@testable import PokemonTerminalGame
 
 final class PokeFactoryTests: XCTestCase {
     
@@ -28,12 +28,12 @@ final class PokeFactoryTests: XCTestCase {
 
         // Act: Run the factory using injected test data
         let result = PokeFactory.allPokemon(
-            numbers: testNumbers,
+            ids: testNumbers,
             names: testNames,
             types: testTypes,
-            hp: testHP,
-            attack: testAttack,
-            difficulty: testDifficulty
+            hps: testHP,
+            attacks: testAttack,
+            difficulties: testDifficulty
         )
 
         // Assert: Only the valid Pokemon should be returned
@@ -45,12 +45,12 @@ final class PokeFactoryTests: XCTestCase {
     func testFactorySkipsSingleInvalidTypeAmongFullSet() {
         
         // Arrange: Clone full dataset and inject a single invalid type
-        let names = pokemonNames
-        var types = pokemonTypes
-        let hp = pokemonHP
-        let attack = pokemonAttack
-        let numbers = pokemonNumbers
-        let difficulty = pokemonCatchDifficulty
+        let names = names
+        var types = types
+        let hp = hp
+        let attack = attack
+        let numbers = pokedexIDs
+        let difficulty = catchDifficulties
         
         // Invalidate the type of one specific Pokemon (e.g., index 50)
         let invalidIndex = 50
@@ -58,19 +58,19 @@ final class PokeFactoryTests: XCTestCase {
 
         // Act: Use factory with mostly valid data and one invalid entry
         let pokedex = PokeFactory.allPokemon(
-            numbers: numbers,
+            ids: numbers,
             names: names,
             types: types,
-            hp: hp,
-            attack: attack,
-            difficulty: difficulty
+            hps: hp,
+            attacks: attack,
+            difficulties: difficulty
         )
 
         // Assert: Only 150 Pokemon should be created instead of 151
         XCTAssertEqual(pokedex.count, 150, "Factory should skip exactly one invalid Pokemon and create the rest.")
 
         // For thoroughness: Ensure that the invalid entry was actually skipped
-        let invalidName = pokemonNames[invalidIndex]
+        let invalidName = names[invalidIndex]
         let wasSkipped = !pokedex.contains { $0.name == invalidName }
         XCTAssertTrue(wasSkipped, "The Pokemon with the invalid type should be excluded from the result.")
     }
@@ -85,7 +85,8 @@ final class PokeFactoryTests: XCTestCase {
             type: [.grass, .poison],
             maxHP: 45,
             attack: 49,
-            catchDifficulty: 30
+            catchDifficulty: 30,
+            sprite: AsciiPokemonArt.bulbasaur
         )
         
         let pokedex = PokeFactory.allPokemon()
