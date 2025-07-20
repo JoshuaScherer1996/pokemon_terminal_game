@@ -4,7 +4,7 @@ import XCTest
 // MARK: Unit Tests for the EscapeService
 
 /// Unit tests for the EscapeService using the AAA pattern.
-final class EscapeTests: XCTestCase {
+final class EscapeServiceTests: XCTestCase {
 
     /// Should return true when random chance is below the escape threshold.
     func testEscapeSuccess() {

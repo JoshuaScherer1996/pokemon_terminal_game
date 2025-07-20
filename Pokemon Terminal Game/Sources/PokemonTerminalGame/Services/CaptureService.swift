@@ -12,8 +12,9 @@ final class CaptureService {
     ///
     /// - Parameters:
     ///   - pokemon: The encountered Pokemon the player is trying to catch.
+    ///   - randomProvider: Random value generator between 0.0 and 1.0 (used for test injection).
     /// - Returns: `true` if the Pokemon was successfully caught, otherwise `false`.
-    func tryCatch(pokemon: Pokemon) -> Bool {
+    func tryCatch(pokemon: Pokemon, randomProvider: () -> Double = { Double.random(in: 0...1) }) -> Bool {
         let baseChance = pokemon.catchChance()
         let hpFactor = Double(pokemon.maxHP - pokemon.currentHP) / Double(pokemon.maxHP)
         let adjustedChance = max(0.05, min(1.0, baseChance + hpFactor)) // clamp between 5% and 100%

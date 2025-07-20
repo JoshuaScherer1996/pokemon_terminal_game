@@ -4,7 +4,7 @@ import XCTest
 // MARK: Unit Tests for the EncounterService
 
 /// Unit tests for the EncounterService using the AAA pattern.
-final class EncounterTests: XCTestCase {
+final class EncounterServiceTests: XCTestCase {
 
     /// Should return a valid random Pokémon from the list.
     func testRandomEncounterReturnsValidPokemon() {
